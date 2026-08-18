@@ -50,7 +50,7 @@
     --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.05);
     
     /* Layout Max Width */
-    --container-width: 1240px;
+    --container-width: 1280px;
 }
 
 html {
@@ -73,12 +73,12 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Container */
+/* Fluid Container (Scales smoothly from mobile to 4K) */
 .container {
     width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 clamp(1.25rem, 4vw, 2rem);
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 
 /* Typography */
@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     color: var(--color-text-body);
-    font-size: 0.96rem;
+    font-size: clamp(0.92rem, 1.2vw, 1.02rem);
     line-height: 1.65;
     overflow-wrap: break-word;
 }
@@ -110,7 +110,7 @@ img, video, iframe, svg {
     display: block;
 }
 
-/* Clean Editorial Pill Badges (No random decorative slob icons) */
+/* Clean Editorial Pill Badges */
 .badge-pill {
     display: inline-flex;
     align-items: center;
@@ -130,7 +130,7 @@ img, video, iframe, svg {
     color: white;
 }
 
-/* Buttons (Natural, stable, no bouncing) */
+/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -221,7 +221,7 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
-   Header Navigation (Clean White Floating)
+   Header Navigation
    ========================================================================== */
 .site-header {
     position: sticky;
@@ -283,7 +283,7 @@ img, video, iframe, svg {
 .desktop-nav-links {
     display: flex;
     align-items: center;
-    gap: 1.75rem;
+    gap: clamp(1rem, 2vw, 1.75rem);
 }
 
 .nav-item {
@@ -309,7 +309,6 @@ img, video, iframe, svg {
     padding: 0.35rem;
 }
 
-/* Mobile Nav Drawer */
 .mobile-nav-drawer {
     position: fixed;
     top: 65px;
@@ -344,16 +343,16 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
-   Sub-Page Hero Header (Clean Minimal Light)
+   Sub-Page Hero Header
    ========================================================================== */
 .subpage-hero {
-    padding: 3.5rem 0 2.5rem;
+    padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(1.5rem, 3vw, 2.5rem);
     border-bottom: 1px solid var(--color-border-light);
     background-color: var(--color-bg);
 }
 
 .subpage-hero-inner {
-    max-width: 800px;
+    max-width: 820px;
 }
 
 .subpage-hero h1 {
@@ -386,17 +385,17 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
-   Hero Section (Hero Card Container - Crisp & Stable)
+   Hero Section
    ========================================================================== */
 .hero-wrapper {
-    padding: 1.25rem 0 3.5rem;
+    padding: 1.25rem 0 clamp(2.5rem, 4vw, 3.5rem);
 }
 
 .hero-card {
     position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    min-height: 520px;
+    min-height: clamp(460px, 55vh, 600px);
     display: flex;
     align-items: center;
     background-color: var(--color-dark);
@@ -426,7 +425,7 @@ img, video, iframe, svg {
     position: relative;
     z-index: 2;
     padding: clamp(2.5rem, 6vw, 4.5rem);
-    max-width: 580px;
+    max-width: 600px;
     color: white;
 }
 
@@ -453,16 +452,16 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
-   Section 2: Who We Are (Split with Mission & Vision Stack)
+   Section 2: Who We Are
    ========================================================================== */
 .who-we-are-section {
-    padding: 2.5rem 0 4rem;
+    padding: clamp(2rem, 4vw, 3rem) 0 clamp(3rem, 5vw, 4.5rem);
 }
 
 .who-grid {
     display: grid;
     grid-template-columns: 1.25fr 1fr;
-    gap: 2.5rem;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
     align-items: stretch;
 }
 
@@ -514,11 +513,11 @@ img, video, iframe, svg {
     border-radius: var(--radius-lg);
     overflow: hidden;
     flex: 1;
-    min-height: 220px;
+    min-height: clamp(200px, 24vh, 260px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 2rem;
+    padding: clamp(1.5rem, 3vw, 2rem);
     color: white;
     background-color: var(--color-dark);
 }
@@ -565,8 +564,8 @@ img, video, iframe, svg {
 .stats-bar-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-top: 3.5rem;
-    padding: 2rem 0;
+    margin-top: clamp(2.5rem, 4vw, 3.5rem);
+    padding: clamp(1.5rem, 3vw, 2rem) 0;
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
 }
@@ -602,16 +601,16 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
-   Section 3: Our Essence (Harmony in Faith)
+   Section 3: Our Essence
    ========================================================================== */
 .essence-section {
-    padding: 4rem 0 5rem;
+    padding: clamp(3rem, 5vw, 4.5rem) 0;
 }
 
 .essence-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: clamp(2.5rem, 6vw, 4.5rem);
+    gap: clamp(2rem, 5vw, 4.5rem);
     align-items: center;
 }
 
@@ -629,7 +628,7 @@ img, video, iframe, svg {
 }
 
 .essence-content-box {
-    padding-left: 1rem;
+    padding-left: clamp(0rem, 2vw, 1rem);
 }
 
 .essence-content-box h2 {
@@ -646,10 +645,10 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
-   Section 4: What We Do (5 Column Cards Grid - Clean & Stable)
+   Section 4: What We Do (5 Column Grid)
    ========================================================================== */
 .programs-section {
-    padding: 3.5rem 0 5rem;
+    padding: clamp(2.5rem, 4vw, 4rem) 0 clamp(3.5rem, 5vw, 5rem);
 }
 
 .section-top-bar {
@@ -724,17 +723,17 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
-   Section 5: Our Impact (Full-Width Banner Card)
+   Section 5: Our Impact / Banner Cards
    ========================================================================== */
 .impact-banner-section {
-    padding: 2rem 0 5rem;
+    padding: 1.5rem 0 clamp(3rem, 5vw, 5rem);
 }
 
 .impact-banner-card {
     position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    min-height: 420px;
+    min-height: clamp(380px, 45vh, 460px);
     display: flex;
     align-items: center;
     background-color: var(--color-dark);
@@ -763,14 +762,14 @@ img, video, iframe, svg {
 .impact-banner-content {
     position: relative;
     z-index: 2;
-    padding: clamp(2.5rem, 5vw, 4rem);
-    max-width: 520px;
+    padding: clamp(2rem, 5vw, 4rem);
+    max-width: 580px;
     color: white;
 }
 
 .impact-banner-content h2 {
     color: white;
-    font-size: clamp(2rem, 3.8vw, 3rem);
+    font-size: clamp(1.9rem, 3.6vw, 2.75rem);
     line-height: 1.15;
     margin-bottom: 1rem;
 }
@@ -783,12 +782,12 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
-   Discography / Music Cards (Clean & Stable)
+   Discography / Music Cards
    ========================================================================== */
 .discography-three-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
 }
 
 .album-clean-card {
@@ -832,7 +831,7 @@ img, video, iframe, svg {
 }
 
 .album-clean-body {
-    padding: 1.5rem;
+    padding: clamp(1.25rem, 2vw, 1.5rem);
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -865,7 +864,7 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
-   Event Cards (Clean Luxury Split)
+   Event Cards
    ========================================================================== */
 .event-clean-card {
     background: white;
@@ -873,7 +872,7 @@ img, video, iframe, svg {
     border-radius: var(--radius-md);
     overflow: hidden;
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 320px 1fr;
     margin-bottom: 1.75rem;
     transition: border-color 0.2s ease;
 }
@@ -895,7 +894,7 @@ img, video, iframe, svg {
 }
 
 .event-clean-body {
-    padding: 2rem;
+    padding: clamp(1.5rem, 3vw, 2rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -922,19 +921,19 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
-   Voice & Pillar Cards (About Page)
+   Voice & Pillar Cards
    ========================================================================== */
 .voice-four-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .voice-clean-card {
     background: white;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    padding: 2rem 1.5rem;
+    padding: clamp(1.5rem, 2.5vw, 2rem) clamp(1.25rem, 2vw, 1.5rem);
     text-align: left;
     transition: border-color 0.2s ease;
 }
@@ -1143,7 +1142,7 @@ img, video, iframe, svg {
 .contact-clean-grid {
     display: grid;
     grid-template-columns: 1fr 1.35fr;
-    gap: 3rem;
+    gap: clamp(2rem, 4vw, 3.5rem);
     align-items: start;
 }
 
@@ -1269,6 +1268,85 @@ textarea.form-input {
     min-height: 100px;
 }
 
+/* ==========================================================================
+   Interactive FAQ Accordion
+   ========================================================================== */
+.faq-accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.faq-accordion-item {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-accordion-item.open {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-subtle);
+}
+
+.faq-accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    color: var(--color-text-main);
+    font-family: inherit;
+    font-size: 1.02rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.faq-accordion-header:hover {
+    color: var(--color-primary);
+}
+
+.faq-accordion-question {
+    flex: 1;
+    padding-right: 1rem;
+    line-height: 1.4;
+}
+
+.faq-accordion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--color-surface-card);
+    color: var(--color-primary);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.faq-accordion-item.open .faq-accordion-icon {
+    background: var(--color-primary);
+    color: white;
+}
+
+.faq-accordion-body {
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.faq-accordion-content {
+    padding: 0 1.5rem 1.35rem;
+    color: var(--color-text-body);
+    font-size: 0.94rem;
+    line-height: 1.65;
+}
+
 /* Streaming Badges in Bar */
 .stream-pill {
     display: inline-flex;
@@ -1295,18 +1373,18 @@ textarea.form-input {
 .stream-pill.youtube:hover { background: #FF0000; color: white; border-color: #FF0000; }
 
 /* ==========================================================================
-   Footer (Clean Editorial Dark 5-Column)
+   Footer
    ========================================================================== */
 .site-footer {
     background-color: var(--color-dark);
     color: white;
-    padding: 4.5rem 0 2rem;
+    padding: clamp(3.5rem, 6vw, 4.5rem) 0 2rem;
 }
 
 .footer-main-grid {
     display: grid;
     grid-template-columns: 1.6fr 1fr 1fr 1.2fr 1.6fr;
-    gap: 2.5rem;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
     margin-bottom: 4rem;
 }
 
@@ -1428,10 +1506,24 @@ textarea.form-input {
 }
 
 /* ==========================================================================
-   Responsive Breakpoints
+   Responsive Breakpoints & Large Screen Fluidity
    ========================================================================== */
 
-/* Laptops (<= 1100px) */
+/* Large / Ultrawide Displays (>= 1440px) */
+@media (min-width: 1440px) {
+    :root {
+        --container-width: 1320px;
+    }
+}
+
+/* 4K Displays (>= 2200px) */
+@media (min-width: 2200px) {
+    :root {
+        --container-width: 1440px;
+    }
+}
+
+/* Laptops / Desktops (<= 1100px) */
 @media (max-width: 1100px) {
     .programs-five-grid,
     .discography-three-grid,
@@ -1448,7 +1540,7 @@ textarea.form-input {
     }
 }
 
-/* Tablets (<= 860px) */
+/* Tablets / iPads (<= 860px) */
 @media (max-width: 860px) {
     .desktop-nav-links,
     .btn-book-desktop {
