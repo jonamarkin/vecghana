@@ -28,6 +28,17 @@ export default function Header() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
@@ -42,7 +53,7 @@ export default function Header() {
     <>
       <header className={`site-header ${isScrolled ? "scrolled" : ""}`}>
         <div className="container header-inner">
-          <Link href="/" className="site-logo">
+          <Link href="/" className="site-logo" onClick={() => setMobileMenuOpen(false)}>
             <Image
               src="/images/logo.png"
               alt="VocalEssence Chorale"
@@ -69,16 +80,20 @@ export default function Header() {
             ))}
           </nav>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-            <Link href="/contact" className="btn btn-primary" style={{ padding: "0.55rem 1.35rem", fontSize: "0.88rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.85rem" }}>
+            <Link
+              href="/contact"
+              className="btn btn-primary btn-book-desktop"
+              style={{ padding: "0.55rem 1.35rem", fontSize: "0.88rem" }}
+            >
               Book Us
             </Link>
             <button
               className="mobile-nav-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
@@ -86,20 +101,22 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <div className={`mobile-nav-drawer ${mobileMenuOpen ? "active" : ""}`}>
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`nav-item ${pathname === item.href ? "active" : ""}`}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            {item.name}
-          </Link>
-        ))}
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem", width: "100%" }}>
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`nav-item ${pathname === item.href ? "active" : ""}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
         <Link
           href="/contact"
           className="btn btn-primary"
-          style={{ marginTop: "1rem", textAlign: "center" }}
+          style={{ marginTop: "1.5rem", width: "100%", padding: "0.85rem 1.5rem" }}
           onClick={() => setMobileMenuOpen(false)}
         >
           Book Us

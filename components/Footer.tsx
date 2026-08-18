@@ -108,10 +108,10 @@ export default function Footer() {
           <h4>Connect</h4>
           <ul className="footer-contact-list">
             <li>
-              <Phone size={14} /> +233 24 212 3456
+              <Phone size={14} /> <a href="tel:+233200079728">+233 20 007 9728</a>
             </li>
             <li>
-              <Mail size={14} /> info@vecghana.com
+              <Mail size={14} /> <a href="mailto:vocalessencechorale@gmail.com">vocalessencechorale@gmail.com</a>
             </li>
             <li>
               <MapPin size={14} /> Accra, Ghana
