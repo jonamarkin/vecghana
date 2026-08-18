@@ -54,9 +54,8 @@ export default function HomePage() {
             <div className="hero-card-overlay"></div>
             <div className="hero-card-content">
               <h1>
-                We Sing.<br />
-                We Inspire.<br />
-                We Impact.
+                In Harmony.<br />
+                We Sing.
               </h1>
               <p>
                 VocalEssence Chorale Ghana is a passionate community of voices spreading the message of hope, faith and love through choral music.
