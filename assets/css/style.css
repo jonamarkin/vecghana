@@ -517,6 +517,7 @@ i[data-lucide] {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
+.stream-pill.spotify:hover { background: #1DB954; color: white; border-color: #1DB954; }
 .stream-pill.apple:hover { background: #fa243c; color: white; border-color: #fa243c; }
 .stream-pill.youtube:hover { background: #ff0000; color: white; border-color: #ff0000; }
 .stream-pill.tiktok:hover { background: #000000; color: #00f2fe; border-color: #fe0979; }
