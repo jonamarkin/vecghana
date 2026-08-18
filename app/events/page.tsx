@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  ChevronRight,
-  Globe,
-  Sparkles,
-  ArrowRight,
-} from "lucide-react";
+import { ChevronRight, ArrowRight } from "lucide-react";
 import { events } from "@/data/events";
 
 export const metadata: Metadata = {
@@ -47,7 +42,7 @@ export default function EventsPage() {
       {/* Featured Tour Spotlight */}
       <section style={{ padding: "4rem 0" }}>
         <div className="container">
-          <div className="impact-banner-card reveal-on-scroll" style={{ marginBottom: "4rem" }}>
+          <div className="impact-banner-card" style={{ marginBottom: "4rem" }}>
             <div className="impact-banner-bg">
               <Image
                 src="/images/choir-8.jpg"
@@ -59,7 +54,7 @@ export default function EventsPage() {
             <div className="impact-banner-overlay"></div>
             <div className="impact-banner-content" style={{ maxWidth: "600px" }}>
               <div className="badge-pill dark">
-                <Globe size={14} /> Continental Representation
+                Continental Representation
               </div>
               <h2>7th Africa Sings Festival | Cotonou, Benin</h2>
               <p>
@@ -67,7 +62,7 @@ export default function EventsPage() {
               </p>
               <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap" }}>
                 <a
-                  href="https://www.tiktok.com/@vecghana"
+                  href="https://www.tiktok.com/@vecghana/video/7289724643567602950"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
@@ -82,14 +77,14 @@ export default function EventsPage() {
           </div>
 
           {/* Signature Productions List */}
-          <div style={{ marginBottom: "2.5rem" }} className="reveal-on-scroll">
+          <div style={{ marginBottom: "2.5rem" }}>
             <div className="badge-pill">Annual Productions</div>
             <h2>Signature Concert Series</h2>
           </div>
 
           <div>
             {events.slice(1).map((event) => (
-              <div key={event.id} className="event-clean-card reveal-on-scroll">
+              <div key={event.id} className="event-clean-card">
                 <div className="event-clean-img">
                   <Image
                     src={event.image}
@@ -100,7 +95,7 @@ export default function EventsPage() {
                 </div>
                 <div className="event-clean-body">
                   <div className="event-clean-badge">
-                    <Sparkles size={13} /> {event.badge}
+                    {event.badge}
                   </div>
                   <h3>{event.title}</h3>
                   <p>{event.description}</p>
@@ -132,7 +127,7 @@ export default function EventsPage() {
       </section>
 
       {/* Contained Bottom Banner */}
-      <section className="impact-banner-section reveal-on-scroll">
+      <section className="impact-banner-section">
         <div className="container">
           <div className="impact-banner-card">
             <div className="impact-banner-bg">

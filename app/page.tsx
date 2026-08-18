@@ -74,7 +74,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. Who We Are Section */}
-      <section className="who-we-are-section reveal-on-scroll">
+      <section className="who-we-are-section">
         <div className="container">
           <div className="who-grid">
             {/* Left Big Feature */}
@@ -144,7 +144,6 @@ export default function HomePage() {
                     style={{ objectFit: "cover" }}
                   />
                 </div>
-                <div className="vision-card-overlay"></div>
                 <div className="mission-card-content">
                   <h3>Our Vision</h3>
                   <p>
@@ -159,7 +158,7 @@ export default function HomePage() {
           </div>
 
           {/* Stats Bar */}
-          <div className="stats-bar-grid reveal-on-scroll">
+          <div className="stats-bar-grid">
             <div className="stat-box">
               <div className="stat-num">13+</div>
               <div className="stat-text">Years of Ministry</div>
@@ -181,7 +180,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. Our Essence Section */}
-      <section className="essence-section reveal-on-scroll">
+      <section className="essence-section">
         <div className="container">
           <div className="essence-layout">
             <div className="essence-img-box">
@@ -209,8 +208,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. What We Do / Our Programs & Ministry Section */}
-      <section className="programs-section reveal-on-scroll">
+      {/* 4. International Tour Spotlight (Africa Sings Benin 2023) */}
+      <section style={{ padding: "1.5rem 0 4rem" }}>
+        <div className="container">
+          <div className="impact-banner-card">
+            <div className="impact-banner-bg">
+              <Image
+                src="/images/choir-8.jpg"
+                alt="Africa Sings Festival Cotonou Benin"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <div className="impact-banner-overlay"></div>
+            <div className="impact-banner-content" style={{ maxWidth: "640px" }}>
+              <div className="badge-pill dark">
+                International Tour Spotlight
+              </div>
+              <h2>7th Africa Sings Festival | Cotonou, Benin</h2>
+              <p>
+                From <strong>October 11–15, 2023</strong>, VocalEssence Chorale Ghana proudly represented our nation at the 7th Edition of the Africa Sings Festival in Cotonou, Benin — sharing African choral harmonies, magnifying faith, and celebrating cultural unity across the continent.
+              </p>
+              <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
+                <Link href="/events" className="btn btn-primary">
+                  Explore Tour Story
+                </Link>
+                <a
+                  href="https://www.tiktok.com/@vecghana/video/7289724643567602950"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-white"
+                >
+                  Watch Tour Video
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. What We Do / Our Programs & Ministry Section */}
+      <section className="programs-section">
         <div className="container">
           <div className="section-top-bar">
             <div>
@@ -224,7 +262,7 @@ export default function HomePage() {
 
           <div className="programs-five-grid">
             {programs.map((prog, idx) => (
-              <div key={idx} className={`prog-item-card reveal-on-scroll reveal-delay-${(idx % 5) + 1}`}>
+              <div key={idx} className="prog-item-card">
                 <div className="prog-item-img">
                   <Image
                     src={prog.image}
@@ -248,8 +286,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Our Impact Banner Card */}
-      <section className="impact-banner-section reveal-on-scroll">
+      {/* 6. Our Impact Banner Card */}
+      <section className="impact-banner-section">
         <div className="container">
           <div className="impact-banner-card">
             <div className="impact-banner-bg">

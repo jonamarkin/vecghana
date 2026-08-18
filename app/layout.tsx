@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ScrollObserver from "@/components/ScrollObserver";
 import JsonLd from "@/components/JsonLd";
 
 export const viewport: Viewport = {
@@ -108,7 +107,6 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body>
-        <ScrollObserver />
         <Header />
         <main>{children}</main>
         <Footer />
