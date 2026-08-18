@@ -17,9 +17,19 @@ import {
 import BookingForm from "@/components/BookingForm";
 
 export const metadata: Metadata = {
-  title: "Book Us & Contact | VocalEssence Chorale Ghana",
+  title: "Book Us & Contact | Event Inquiries & Secretariat",
   description:
-    "Official event booking inquiry form and direct contact directory for VocalEssence Chorale Ghana in Dansoman, Accra.",
+    "Official event booking inquiry form and direct contact directory for VocalEssence Chorale Ghana in Dansoman, Accra. Book the choir for weddings, concerts, and corporate galas.",
+  alternates: {
+    canonical: "https://vecghana.com/contact",
+  },
+  openGraph: {
+    title: "Book Us & Contact | VocalEssence Chorale Ghana",
+    description:
+      "Partner with VocalEssence Chorale Ghana for weddings, church conventions, and state ceremonies. Contact our secretariat directly.",
+    url: "https://vecghana.com/contact",
+    images: ["https://vecghana.com/images/choir-3.jpg"],
+  },
 };
 
 export default function ContactPage() {

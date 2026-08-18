@@ -11,9 +11,19 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Our Impact & Philanthropy | VocalEssence Chorale Ghana",
+  title: "Our Impact | Saving Hearts Project & Philanthropy",
   description:
-    "Learn about the Saving Hearts Project in partnership with Korle Bu Cardiothoracic Centre, widow outreach, and community charity.",
+    "Learn about the Saving Hearts Project by VocalEssence Chorale Ghana in partnership with the National Cardiothoracic Centre at Korle Bu, widow outreach, and community benevolence.",
+  alternates: {
+    canonical: "https://vecghana.com/impact",
+  },
+  openGraph: {
+    title: "Our Impact & Philanthropy | VocalEssence Chorale Ghana",
+    description:
+      "Music that changes lives: sponsoring pediatric open-heart surgeries at Korle Bu, supporting widows, and caring for orphanages.",
+    url: "https://vecghana.com/impact",
+    images: ["https://vecghana.com/images/choir-4.jpg"],
+  },
 };
 
 export default function ImpactPage() {

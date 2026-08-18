@@ -10,9 +10,19 @@ import {
 import { events } from "@/data/events";
 
 export const metadata: Metadata = {
-  title: "Events & Global Tours | VocalEssence Chorale Ghana",
+  title: "Concerts & Tours | Africa Sings Benin & Feliz Navidad",
   description:
-    "Explore past and upcoming concert productions, the 7th Africa Sings Festival in Benin, and our annual Feliz Navidad Christmas concerts.",
+    "Explore past and upcoming concert productions by VocalEssence Chorale Ghana, including the 7th Africa Sings Festival in Benin, Feliz Navidad Christmas concerts, and Easter cantatas.",
+  alternates: {
+    canonical: "https://vecghana.com/events",
+  },
+  openGraph: {
+    title: "Concerts & Tours | VocalEssence Chorale Ghana",
+    description:
+      "Witness our vibrant performance history: Africa Sings Benin 2023, Feliz Navidad series, and signature concert productions.",
+    url: "https://vecghana.com/events",
+    images: ["https://vecghana.com/images/choir-8.jpg"],
+  },
 };
 
 export default function EventsPage() {

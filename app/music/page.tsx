@@ -15,9 +15,19 @@ import {
 import { albums } from "@/data/discography";
 
 export const metadata: Metadata = {
-  title: "Music & Discography | VocalEssence Chorale Ghana",
+  title: "Music & Discography | Albums, Highlife & Streaming",
   description:
-    "Explore the official discography, albums, and singles of VocalEssence Chorale Ghana on Spotify, Apple Music, YouTube, and digital platforms.",
+    "Stream the official discography of VocalEssence Chorale Ghana: Ayeyi Ndwom, Harmony of a Decade, Carols from VEC, and Ghanaian choral highlife on Spotify, Apple Music, and YouTube.",
+  alternates: {
+    canonical: "https://vecghana.com/music",
+  },
+  openGraph: {
+    title: "Music & Discography | VocalEssence Chorale Ghana",
+    description:
+      "Explore 6 studio and live albums from VocalEssence Chorale Ghana. Stream on Spotify, Apple Music, YouTube, and Boomplay.",
+    url: "https://vecghana.com/music",
+    images: ["https://vecghana.com/images/choir-1.jpg"],
+  },
 };
 
 export default function MusicPage() {

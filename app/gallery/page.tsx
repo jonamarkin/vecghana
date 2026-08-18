@@ -10,9 +10,19 @@ import {
 import GalleryViewer from "@/components/GalleryViewer";
 
 export const metadata: Metadata = {
-  title: "Photo & Video Gallery | VocalEssence Chorale Ghana",
+  title: "Photo & Video Gallery | Concerts, Robes & Tours",
   description:
-    "Explore high-resolution concert photos, choir portraits, international tour moments, and video recordings of VocalEssence Chorale Ghana.",
+    "Explore high-resolution concert photos, authentic choral robes, African tour archives, and video recordings of VocalEssence Chorale Ghana.",
+  alternates: {
+    canonical: "https://vecghana.com/gallery",
+  },
+  openGraph: {
+    title: "Photo & Video Gallery | VocalEssence Chorale Ghana",
+    description:
+      "Moments in harmony: visual archives of live concerts, continental festivals, choral portraits, and YouTube / TikTok videos.",
+    url: "https://vecghana.com/gallery",
+    images: ["https://vecghana.com/images/choir-7.jpg"],
+  },
 };
 
 export default function GalleryPage() {

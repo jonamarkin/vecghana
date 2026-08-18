@@ -14,9 +14,19 @@ import {
 import { milestones } from "@/data/milestones";
 
 export const metadata: Metadata = {
-  title: "About Us | VocalEssence Chorale Ghana",
+  title: "About Us | Our Story, Mission & Vocal Sections",
   description:
-    "Discover the founding story, mission, vocal sections, and 13+ year timeline of VocalEssence Chorale Ghana.",
+    "Discover the founding story of VocalEssence Chorale Ghana in Dansoman (2013), our mission, 4 vocal sections, live orchestra, and 13+ year milestone timeline.",
+  alternates: {
+    canonical: "https://vecghana.com/about",
+  },
+  openGraph: {
+    title: "About Us | VocalEssence Chorale Ghana",
+    description:
+      "A community built on faith, excellence, and love. Learn about our founding story, mission, vocal sections, and musical journey.",
+    url: "https://vecghana.com/about",
+    images: ["https://vecghana.com/images/choir-6.jpg"],
+  },
 };
 
 export default function AboutPage() {
