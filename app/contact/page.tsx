@@ -59,7 +59,7 @@ export default function ContactPage() {
                 </div>
                 <div className="contact-item-text">
                   <strong>Phone / WhatsApp</strong>
-                  <a href="tel:+233242123456">+233 24 212 3456</a>
+                  <a href="tel:+233200079728">+233 20 007 9728</a>
                 </div>
               </li>
 
@@ -69,7 +69,7 @@ export default function ContactPage() {
                 </div>
                 <div className="contact-item-text">
                   <strong>Official Email</strong>
-                  <a href="mailto:info@vecghana.com">info@vecghana.com</a>
+                  <a href="mailto:vocalessencechorale@gmail.com">vocalessencechorale@gmail.com</a>
                 </div>
               </li>
 

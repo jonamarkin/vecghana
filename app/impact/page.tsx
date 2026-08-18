@@ -60,7 +60,7 @@ export default function ImpactPage() {
                 <Link href="/contact" className="btn btn-primary">
                   Partner With Us
                 </Link>
-                <a href="tel:+233242123456" className="btn btn-outline-white">
+                <a href="tel:+233200079728" className="btn btn-outline-white">
                   <Phone size={15} /> Speak to Secretariat
                 </a>
               </div>
