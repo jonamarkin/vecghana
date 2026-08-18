@@ -10,7 +10,6 @@ import {
   Mic2,
   Music,
   Volume2,
-  Radio,
 } from "lucide-react";
 import { milestones } from "@/data/milestones";
 
@@ -40,7 +39,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story & Founding */}
-      <section style={{ padding: "4rem 0" }}>
+      <section style={{ padding: "4rem 0" }} className="reveal-on-scroll">
         <div className="container">
           <div className="essence-layout">
             <div className="essence-img-box">
@@ -74,7 +73,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission, Vision & Values */}
-      <section style={{ padding: "4rem 0", backgroundColor: "var(--color-surface-soft)", borderTop: "1px solid var(--color-border-light)", borderBottom: "1px solid var(--color-border-light)" }}>
+      <section style={{ padding: "4rem 0", backgroundColor: "var(--color-surface-soft)", borderTop: "1px solid var(--color-border-light)", borderBottom: "1px solid var(--color-border-light)" }} className="reveal-on-scroll">
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: "650px", margin: "0 auto 3rem" }}>
             <div className="badge-pill">Our Pillars</div>
@@ -83,7 +82,7 @@ export default function AboutPage() {
           </div>
 
           <div className="voice-four-grid">
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-1">
               <div className="voice-clean-icon">
                 <Heart size={22} />
               </div>
@@ -93,7 +92,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-2">
               <div className="voice-clean-icon">
                 <Sparkles size={22} />
               </div>
@@ -103,7 +102,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-3">
               <div className="voice-clean-icon">
                 <Award size={22} />
               </div>
@@ -113,7 +112,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-4">
               <div className="voice-clean-icon">
                 <Users size={22} />
               </div>
@@ -127,7 +126,7 @@ export default function AboutPage() {
       </section>
 
       {/* Vocal Sections & Orchestra */}
-      <section style={{ padding: "4.5rem 0" }}>
+      <section style={{ padding: "4.5rem 0" }} className="reveal-on-scroll">
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: "650px", margin: "0 auto 3rem" }}>
             <div className="badge-pill">Choral Anatomy</div>
@@ -136,25 +135,25 @@ export default function AboutPage() {
           </div>
 
           <div className="voice-four-grid">
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-1">
               <div className="voice-clean-icon"><Mic2 size={22} /></div>
               <h4>Sopranos</h4>
               <p>Luminous, crystalline high registers that soar with expressive brilliance and vocal clarity.</p>
             </div>
 
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-2">
               <div className="voice-clean-icon"><Music size={22} /></div>
               <h4>Altos</h4>
               <p>Warm, velvety, and resonant harmonic foundation delivering rich mid-range color.</p>
             </div>
 
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-3">
               <div className="voice-clean-icon"><Sparkles size={22} /></div>
               <h4>Tenors</h4>
               <p>Dynamic, melodic, and powerful upper-range passion bringing vibrant energy to every piece.</p>
             </div>
 
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-4">
               <div className="voice-clean-icon"><Volume2 size={22} /></div>
               <h4>Basses</h4>
               <p>Deep, commanding, and grounded sonic bedrock anchor that solidifies our four-part harmony.</p>
@@ -164,7 +163,7 @@ export default function AboutPage() {
       </section>
 
       {/* Milestone Timeline */}
-      <section style={{ padding: "4rem 0", backgroundColor: "var(--color-surface-soft)", borderTop: "1px solid var(--color-border-light)" }}>
+      <section style={{ padding: "4rem 0", backgroundColor: "var(--color-surface-soft)", borderTop: "1px solid var(--color-border-light)" }} className="reveal-on-scroll">
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: "650px", margin: "0 auto 2.5rem" }}>
             <div className="badge-pill">Our Journey</div>
@@ -174,7 +173,7 @@ export default function AboutPage() {
 
           <div className="timeline-clean">
             {milestones.map((item, index) => (
-              <div key={index} className="timeline-clean-item">
+              <div key={index} className="timeline-clean-item reveal-on-scroll">
                 <div className="timeline-clean-dot"></div>
                 <span className="timeline-clean-year">{item.year}</span>
                 <h3>{item.title}</h3>
@@ -186,7 +185,7 @@ export default function AboutPage() {
       </section>
 
       {/* Contained Bottom Banner */}
-      <section className="impact-banner-section">
+      <section className="impact-banner-section reveal-on-scroll">
         <div className="container">
           <div className="impact-banner-card">
             <div className="impact-banner-bg">

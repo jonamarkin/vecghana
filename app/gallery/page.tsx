@@ -35,14 +35,14 @@ export default function GalleryPage() {
       </section>
 
       {/* Main Filterable Gallery */}
-      <section style={{ padding: "4rem 0" }}>
+      <section style={{ padding: "4rem 0" }} className="reveal-on-scroll">
         <div className="container">
           <GalleryViewer showFilters={true} />
         </div>
       </section>
 
       {/* Video Channels */}
-      <section style={{ padding: "4rem 0", backgroundColor: "var(--color-surface-soft)", borderTop: "1px solid var(--color-border-light)" }}>
+      <section style={{ padding: "4rem 0", backgroundColor: "var(--color-surface-soft)", borderTop: "1px solid var(--color-border-light)" }} className="reveal-on-scroll">
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: "650px", margin: "0 auto 3rem" }}>
             <div className="badge-pill">Video Channels</div>
@@ -51,7 +51,7 @@ export default function GalleryPage() {
           </div>
 
           <div className="discography-three-grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
-            <div className="album-clean-card">
+            <div className="album-clean-card reveal-on-scroll reveal-delay-1">
               <div className="album-clean-art" style={{ aspectRatio: "16/9" }}>
                 <Image src="/images/choir-7.jpg" alt="YouTube Channel" fill style={{ objectFit: "cover" }} />
               </div>
@@ -72,7 +72,7 @@ export default function GalleryPage() {
               </div>
             </div>
 
-            <div className="album-clean-card">
+            <div className="album-clean-card reveal-on-scroll reveal-delay-2">
               <div className="album-clean-art" style={{ aspectRatio: "16/9" }}>
                 <Image src="/images/choir-8.jpg" alt="TikTok Hub" fill style={{ objectFit: "cover" }} />
               </div>
@@ -97,7 +97,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Contained Bottom Banner */}
-      <section className="impact-banner-section">
+      <section className="impact-banner-section reveal-on-scroll">
         <div className="container">
           <div className="impact-banner-card">
             <div className="impact-banner-bg">

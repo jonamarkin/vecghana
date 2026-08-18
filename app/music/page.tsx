@@ -69,14 +69,14 @@ export default function MusicPage() {
       {/* Album Catalog Grid */}
       <section style={{ padding: "4rem 0" }}>
         <div className="container">
-          <div style={{ marginBottom: "2.5rem" }}>
+          <div style={{ marginBottom: "2.5rem" }} className="reveal-on-scroll">
             <div className="badge-pill">Album Catalog</div>
             <h2>Albums & Live Recordings</h2>
           </div>
 
           <div className="discography-three-grid">
-            {albums.map((album) => (
-              <div key={album.id} className="album-clean-card">
+            {albums.map((album, idx) => (
+              <div key={album.id} className={`album-clean-card reveal-on-scroll reveal-delay-${(idx % 3) + 1}`}>
                 <div className="album-clean-art">
                   <Image
                     src={album.image}
@@ -127,7 +127,7 @@ export default function MusicPage() {
       </section>
 
       {/* Musical Styles & Repertoire */}
-      <section style={{ padding: "4rem 0", backgroundColor: "var(--color-surface-soft)", borderTop: "1px solid var(--color-border-light)" }}>
+      <section style={{ padding: "4rem 0", backgroundColor: "var(--color-surface-soft)", borderTop: "1px solid var(--color-border-light)" }} className="reveal-on-scroll">
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: "650px", margin: "0 auto 3rem" }}>
             <div className="badge-pill">Artistic Diversity</div>
@@ -136,22 +136,22 @@ export default function MusicPage() {
           </div>
 
           <div className="voice-four-grid">
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-1">
               <div className="voice-clean-icon"><Music size={22} /></div>
               <h4>Ghanaian Highlife</h4>
               <p>Energetic indigenous choral medleys arranged in polyrhythmic African cadences.</p>
             </div>
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-2">
               <div className="voice-clean-icon"><BookOpen size={22} /></div>
               <h4>Sacred Hymnody</h4>
               <p>Traditional four-part classical hymns rendered with solemn reverence and beauty.</p>
             </div>
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-3">
               <div className="voice-clean-icon"><Sparkles size={22} /></div>
               <h4>Western Classical</h4>
               <p>Masterworks by Handel, Mozart, Bach, and classic choral oratorios.</p>
             </div>
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-4">
               <div className="voice-clean-icon"><Radio size={22} /></div>
               <h4>Contemporary Praise</h4>
               <p>Modern gospel and spirit-filled praise tailored for live concerts and conventions.</p>
@@ -159,7 +159,7 @@ export default function MusicPage() {
           </div>
 
           {/* Worldwide Distribution Banner */}
-          <div style={{ marginTop: "3.5rem" }} className="impact-banner-card">
+          <div style={{ marginTop: "3.5rem" }} className="impact-banner-card reveal-on-scroll">
             <div className="impact-banner-overlay" style={{ background: "rgba(14, 14, 16, 0.96)" }}></div>
             <div className="impact-banner-content" style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
               <div className="badge-pill dark" style={{ margin: "0 auto 1rem" }}>Worldwide Distribution</div>
@@ -214,7 +214,7 @@ export default function MusicPage() {
       </section>
 
       {/* Contained Bottom Banner */}
-      <section className="impact-banner-section">
+      <section className="impact-banner-section reveal-on-scroll">
         <div className="container">
           <div className="impact-banner-card">
             <div className="impact-banner-bg">

@@ -42,7 +42,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Booking & Info Section */}
-      <section style={{ padding: "4rem 0" }}>
+      <section style={{ padding: "4rem 0" }} className="reveal-on-scroll">
         <div className="container contact-clean-grid">
           {/* Left Info Card */}
           <div className="contact-card-box">
@@ -167,7 +167,7 @@ export default function ContactPage() {
       </section>
 
       {/* Booking FAQs */}
-      <section style={{ padding: "4rem 0", backgroundColor: "var(--color-surface-soft)", borderTop: "1px solid var(--color-border-light)" }}>
+      <section style={{ padding: "4rem 0", backgroundColor: "var(--color-surface-soft)", borderTop: "1px solid var(--color-border-light)" }} className="reveal-on-scroll">
         <div className="container" style={{ maxWidth: "800px" }}>
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
             <div className="badge-pill">Frequently Asked Questions</div>
@@ -175,28 +175,28 @@ export default function ContactPage() {
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-            <div className="voice-clean-card" style={{ textAlign: "left", padding: "1.75rem" }}>
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-1" style={{ textAlign: "left", padding: "1.75rem" }}>
               <h4 style={{ color: "var(--color-primary)", marginBottom: "0.4rem" }}>How far in advance should we book?</h4>
               <p style={{ color: "var(--color-text-muted)", fontSize: "0.92rem", lineHeight: "1.6" }}>
                 We recommend booking at least 3 to 6 weeks in advance to allow our artistic director to prepare the score and ensure ensemble availability for your chosen date.
               </p>
             </div>
 
-            <div className="voice-clean-card" style={{ textAlign: "left", padding: "1.75rem" }}>
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-2" style={{ textAlign: "left", padding: "1.75rem" }}>
               <h4 style={{ color: "var(--color-primary)", marginBottom: "0.4rem" }}>Can we request specific custom songs or hymns?</h4>
               <p style={{ color: "var(--color-text-muted)", fontSize: "0.92rem", lineHeight: "1.6" }}>
                 Yes! We gladly accommodate personalized repertoire requests, favorite classical anthems, Ghanaian highlife medleys, and custom entrance hymns.
               </p>
             </div>
 
-            <div className="voice-clean-card" style={{ textAlign: "left", padding: "1.75rem" }}>
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-3" style={{ textAlign: "left", padding: "1.75rem" }}>
               <h4 style={{ color: "var(--color-primary)", marginBottom: "0.4rem" }}>Does the choir travel outside Accra and Ghana?</h4>
               <p style={{ color: "var(--color-text-muted)", fontSize: "0.92rem", lineHeight: "1.6" }}>
                 Absolutely. VocalEssence Chorale regularly travels across all regions of Ghana and internationally (e.g. Africa Sings in Benin). Travel logistics can be coordinated with our management team.
               </p>
             </div>
 
-            <div className="voice-clean-card" style={{ textAlign: "left", padding: "1.75rem" }}>
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-4" style={{ textAlign: "left", padding: "1.75rem" }}>
               <h4 style={{ color: "var(--color-primary)", marginBottom: "0.4rem" }}>How can I audition to join VocalEssence Chorale?</h4>
               <p style={{ color: "var(--color-text-muted)", fontSize: "0.92rem", lineHeight: "1.6" }}>
                 We conduct seasonal auditions for passionate, committed soprano, alto, tenor, and bass singers as well as brass and orchestral instrumentalists. Send your details via the form above or reach out on WhatsApp.

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollObserver from "@/components/ScrollObserver";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://vecghana.com"),
@@ -58,6 +59,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <ScrollObserver />
         <Header />
         <main>{children}</main>
         <Footer />

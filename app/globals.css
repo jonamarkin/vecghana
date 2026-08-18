@@ -1,5 +1,5 @@
 /* ==========================================================================
-   VocalEssence Chorale Ghana - Clean Luxury Design System (Exact Match)
+   VocalEssence Chorale Ghana - Clean Luxury Design System & Animations
    ========================================================================== */
 
 /* Reset & Box Sizing */
@@ -48,7 +48,7 @@
     /* Shadows */
     --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.04);
     --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.06);
-    --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.09);
+    --shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.09);
     
     /* Layout Max Width */
     --container-width: 1240px;
@@ -71,6 +71,7 @@ body {
     overflow-x: hidden;
     width: 100%;
     min-width: 320px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Container */
@@ -110,6 +111,51 @@ img, video, iframe, svg {
     display: block;
 }
 
+/* ==========================================================================
+   Smooth Reveal Animations (Intersection Observer)
+   ========================================================================== */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; }
+
+/* Hero Keyframe Animations */
+@keyframes heroFadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(32px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slowAmbientZoom {
+    0% {
+        transform: scale(1.04);
+    }
+    50% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.04);
+    }
+}
+
 /* Pill Badges (Who We Are, Our Mission, etc.) */
 .badge-pill {
     display: inline-flex;
@@ -124,6 +170,11 @@ img, video, iframe, svg {
     letter-spacing: 0.02em;
     margin-bottom: 1.15rem;
     width: fit-content;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.badge-pill:hover {
+    transform: translateY(-1px);
 }
 
 .badge-pill.dark {
@@ -142,10 +193,14 @@ img, video, iframe, svg {
     font-weight: 600;
     font-size: 0.92rem;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     border: 1px solid transparent;
     text-align: center;
     white-space: nowrap;
+}
+
+.btn:active {
+    transform: scale(0.97) !important;
 }
 
 .btn-sm {
@@ -160,8 +215,8 @@ img, video, iframe, svg {
 
 .btn-primary:hover {
     background-color: var(--color-primary-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(74, 21, 75, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(74, 21, 75, 0.3);
 }
 
 .btn-outline-white {
@@ -174,6 +229,7 @@ img, video, iframe, svg {
     background-color: white;
     color: var(--color-dark);
     border-color: white;
+    transform: translateY(-2px);
 }
 
 .btn-outline-dark {
@@ -188,6 +244,7 @@ img, video, iframe, svg {
 .btn-outline-dark:hover {
     border-color: var(--color-primary);
     color: var(--color-primary);
+    transform: translateY(-1px);
 }
 
 .btn-circle-arrow {
@@ -200,7 +257,7 @@ img, video, iframe, svg {
     border: 1px solid var(--color-border);
     color: var(--color-text-main);
     background: white;
-    transition: all 0.25s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     flex-shrink: 0;
 }
 
@@ -208,7 +265,7 @@ img, video, iframe, svg {
     background: var(--color-primary);
     color: white;
     border-color: var(--color-primary);
-    transform: translateX(2px);
+    transform: translateX(3px) scale(1.05);
 }
 
 .btn-circle-arrow.dark-card-arrow {
@@ -222,25 +279,29 @@ img, video, iframe, svg {
 .btn-circle-arrow.dark-card-arrow:hover {
     background: var(--color-primary);
     color: white;
+    transform: translateX(3px) scale(1.05);
 }
 
 /* ==========================================================================
-   Header Navigation (Clean White Floating)
+   Header Navigation (Clean White Floating with Blur)
    ========================================================================== */
 .site-header {
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border-light);
     z-index: 1000;
     padding: 0.9rem 0;
-    transition: box-shadow 0.3s ease;
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .site-header.scrolled {
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    padding: 0.7rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .header-inner {
@@ -261,6 +322,11 @@ img, video, iframe, svg {
     object-fit: contain;
     border-radius: 50%;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.site-logo:hover .logo-graphic {
+    transform: rotate(10deg) scale(1.05);
 }
 
 .logo-words {
@@ -296,6 +362,23 @@ img, video, iframe, svg {
     color: #333336;
     padding: 0.25rem 0;
     position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.25s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%;
 }
 
 .nav-item:hover,
@@ -311,6 +394,11 @@ img, video, iframe, svg {
     color: var(--color-text-main);
     cursor: pointer;
     padding: 0.35rem;
+    transition: transform 0.2s ease;
+}
+
+.mobile-nav-toggle:active {
+    transform: scale(0.9);
 }
 
 /* Mobile Nav Drawer */
@@ -329,7 +417,7 @@ img, video, iframe, svg {
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
     border-top: 1px solid var(--color-border);
     overflow-y: auto;
 }
@@ -351,13 +439,14 @@ img, video, iframe, svg {
    Sub-Page Hero Header (Clean Minimal Light)
    ========================================================================== */
 .subpage-hero {
-    padding: 3rem 0 2rem;
+    padding: 3.5rem 0 2.5rem;
     border-bottom: 1px solid var(--color-border-light);
     background-color: var(--color-bg);
 }
 
 .subpage-hero-inner {
     max-width: 800px;
+    animation: heroFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .subpage-hero h1 {
@@ -404,12 +493,14 @@ img, video, iframe, svg {
     display: flex;
     align-items: center;
     background-color: var(--color-dark);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
 }
 
 .hero-card-img {
     position: absolute;
     inset: 0;
     z-index: 0;
+    animation: slowAmbientZoom 20s infinite ease-in-out;
 }
 
 .hero-card-img img {
@@ -432,6 +523,7 @@ img, video, iframe, svg {
     padding: clamp(2.5rem, 6vw, 4.5rem);
     max-width: 580px;
     color: white;
+    animation: heroFadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero-card-content h1 {
@@ -487,6 +579,11 @@ img, video, iframe, svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.who-left-col:hover .who-image-container img {
+    transform: scale(1.04);
 }
 
 .who-text-wrap {
@@ -525,6 +622,12 @@ img, video, iframe, svg {
     padding: 2rem;
     color: white;
     background-color: var(--color-dark);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.mission-card:hover, .vision-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
 }
 
 .mission-card-bg, .vision-card-bg {
@@ -538,6 +641,13 @@ img, video, iframe, svg {
     height: 100%;
     object-fit: cover;
     opacity: 0.55;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.mission-card:hover .mission-card-bg img,
+.vision-card:hover .vision-card-bg img {
+    transform: scale(1.06);
+    opacity: 0.7;
 }
 
 .mission-card-overlay {
@@ -578,6 +688,11 @@ img, video, iframe, svg {
 .stat-box {
     text-align: center;
     position: relative;
+    transition: transform 0.2s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-2px);
 }
 
 .stat-box:not(:last-child)::after {
@@ -630,6 +745,11 @@ img, video, iframe, svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.essence-layout:hover .essence-img-box img {
+    transform: scale(1.04);
 }
 
 .essence-content-box {
@@ -681,12 +801,13 @@ img, video, iframe, svg {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .prog-item-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-card);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(74, 21, 75, 0.2);
 }
 
 .prog-item-img {
@@ -699,11 +820,11 @@ img, video, iframe, svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .prog-item-card:hover .prog-item-img img {
-    transform: scale(1.06);
+    transform: scale(1.08);
 }
 
 .prog-item-body {
@@ -717,6 +838,11 @@ img, video, iframe, svg {
     font-size: 0.98rem;
     font-weight: 700;
     margin-bottom: 0.35rem;
+    transition: color 0.25s ease;
+}
+
+.prog-item-card:hover .prog-item-body h4 {
+    color: var(--color-primary);
 }
 
 .prog-item-body p {
@@ -730,6 +856,13 @@ img, video, iframe, svg {
 .prog-item-foot {
     display: flex;
     justify-content: flex-end;
+}
+
+.prog-item-card:hover .btn-circle-arrow {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    transform: translateX(3px);
 }
 
 /* ==========================================================================
@@ -747,6 +880,7 @@ img, video, iframe, svg {
     display: flex;
     align-items: center;
     background-color: var(--color-dark);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
 }
 
 .impact-banner-bg {
@@ -760,6 +894,11 @@ img, video, iframe, svg {
     height: 100%;
     object-fit: cover;
     object-position: center right;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.impact-banner-card:hover .impact-banner-bg img {
+    transform: scale(1.04);
 }
 
 .impact-banner-overlay {
@@ -807,12 +946,13 @@ img, video, iframe, svg {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .album-clean-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-card);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(74, 21, 75, 0.2);
 }
 
 .album-clean-art {
@@ -825,11 +965,11 @@ img, video, iframe, svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .album-clean-card:hover .album-clean-art img {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
 .album-clean-year {
@@ -843,6 +983,11 @@ img, video, iframe, svg {
     padding: 0.25rem 0.65rem;
     border-radius: var(--radius-xs);
     backdrop-filter: blur(8px);
+    transition: background-color 0.2s ease;
+}
+
+.album-clean-card:hover .album-clean-year {
+    background: var(--color-primary);
 }
 
 .album-clean-body {
@@ -888,13 +1033,13 @@ img, video, iframe, svg {
     overflow: hidden;
     display: grid;
     grid-template-columns: 300px 1fr;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
     margin-bottom: 1.75rem;
 }
 
 .event-clean-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-card);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
 }
 
 .event-clean-img {
@@ -907,6 +1052,11 @@ img, video, iframe, svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.event-clean-card:hover .event-clean-img img {
+    transform: scale(1.06);
 }
 
 .event-clean-body {
@@ -951,12 +1101,13 @@ img, video, iframe, svg {
     border-radius: var(--radius-md);
     padding: 2rem 1.5rem;
     text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .voice-clean-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-card);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(74, 21, 75, 0.2);
 }
 
 .voice-clean-icon {
@@ -969,6 +1120,13 @@ img, video, iframe, svg {
     align-items: center;
     justify-content: center;
     margin-bottom: 1.15rem;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s ease, color 0.35s ease;
+}
+
+.voice-clean-card:hover .voice-clean-icon {
+    transform: scale(1.12) rotate(-6deg);
+    background: var(--color-primary);
+    color: white;
 }
 
 .voice-clean-card h4 {
@@ -1004,6 +1162,11 @@ img, video, iframe, svg {
     position: relative;
     margin-bottom: 2.5rem;
     padding-left: 1.5rem;
+    transition: transform 0.25s ease;
+}
+
+.timeline-clean-item:hover {
+    transform: translateX(4px);
 }
 
 .timeline-clean-dot {
@@ -1015,6 +1178,12 @@ img, video, iframe, svg {
     border-radius: 50%;
     background: white;
     border: 3px solid var(--color-primary);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.timeline-clean-item:hover .timeline-clean-dot {
+    transform: scale(1.3);
+    background: var(--color-primary);
 }
 
 .timeline-clean-year {
@@ -1081,11 +1250,11 @@ img, video, iframe, svg {
     aspect-ratio: 4 / 3;
     cursor: pointer;
     border: 1px solid var(--color-border);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
 .gallery-clean-item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-hover);
 }
 
@@ -1093,22 +1262,22 @@ img, video, iframe, svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gallery-clean-item:hover img {
-    transform: scale(1.06);
+    transform: scale(1.08);
 }
 
 .gallery-clean-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(14, 14, 16, 0.9) 0%, rgba(14, 14, 16, 0.2) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(14, 14, 16, 0.92) 0%, rgba(14, 14, 16, 0.2) 60%, transparent 100%);
     display: flex;
     align-items: flex-end;
     padding: 1.25rem;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.35s ease;
 }
 
 .gallery-clean-item:hover .gallery-clean-overlay {
@@ -1131,13 +1300,14 @@ img, video, iframe, svg {
 .lightbox-modal {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.92);
+    background: rgba(0, 0, 0, 0.94);
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
+    animation: heroFadeInUp 0.3s ease forwards;
 }
 
 .lightbox-content {
@@ -1154,7 +1324,7 @@ img, video, iframe, svg {
     max-height: 75vh;
     object-fit: contain;
     border-radius: var(--radius-sm);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
 .lightbox-caption {
@@ -1179,7 +1349,7 @@ img, video, iframe, svg {
 }
 
 .lightbox-close:hover {
-    transform: scale(1.2);
+    transform: scale(1.2) rotate(90deg);
 }
 
 /* ==========================================================================
@@ -1221,6 +1391,11 @@ img, video, iframe, svg {
     display: flex;
     align-items: center;
     gap: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+.contact-item-row:hover {
+    transform: translateX(3px);
 }
 
 .contact-item-icon {
@@ -1234,6 +1409,12 @@ img, video, iframe, svg {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-item-row:hover .contact-item-icon {
+    background: var(--color-primary);
+    color: white;
 }
 
 .contact-item-text strong {
@@ -1327,13 +1508,14 @@ textarea.form-input {
     font-size: 0.82rem;
     font-weight: 600;
     border: 1px solid var(--color-border);
-    transition: all 0.25s ease;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .stream-pill:hover {
     background: var(--color-primary);
     color: white;
     border-color: var(--color-primary);
+    transform: translateY(-2px);
 }
 
 .stream-pill.spotify:hover { background: #1DB954; color: white; border-color: #1DB954; }
@@ -1385,13 +1567,13 @@ textarea.form-input {
     align-items: center;
     justify-content: center;
     color: white;
-    transition: all 0.25s ease;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .footer-social-btn:hover {
     background: var(--color-primary);
     border-color: var(--color-primary);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.08);
 }
 
 .footer-col h4 {
@@ -1416,7 +1598,7 @@ textarea.form-input {
 
 .footer-col a:hover {
     color: white;
-    padding-left: 2px;
+    padding-left: 3px;
 }
 
 .footer-contact-list {
@@ -1498,8 +1680,8 @@ textarea.form-input {
 /* Tablets (<= 860px) */
 @media (max-width: 860px) {
     .desktop-nav-links,
-    .site-header .btn {
-        display: none;
+    .btn-book-desktop {
+        display: none !important;
     }
 
     .mobile-nav-toggle {

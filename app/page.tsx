@@ -74,7 +74,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. Who We Are Section */}
-      <section className="who-we-are-section">
+      <section className="who-we-are-section reveal-on-scroll">
         <div className="container">
           <div className="who-grid">
             {/* Left Big Feature */}
@@ -145,7 +145,7 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="vision-card-overlay"></div>
-                <div className="vision-card-content">
+                <div className="mission-card-content">
                   <h3>Our Vision</h3>
                   <p>
                     To be a leading choir that impacts nations and transforms lives.
@@ -159,7 +159,7 @@ export default function HomePage() {
           </div>
 
           {/* Stats Bar */}
-          <div className="stats-bar-grid">
+          <div className="stats-bar-grid reveal-on-scroll">
             <div className="stat-box">
               <div className="stat-num">13+</div>
               <div className="stat-text">Years of Ministry</div>
@@ -181,7 +181,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. Our Essence Section */}
-      <section className="essence-section">
+      <section className="essence-section reveal-on-scroll">
         <div className="container">
           <div className="essence-layout">
             <div className="essence-img-box">
@@ -210,7 +210,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. What We Do / Our Programs & Ministry Section */}
-      <section className="programs-section">
+      <section className="programs-section reveal-on-scroll">
         <div className="container">
           <div className="section-top-bar">
             <div>
@@ -224,7 +224,7 @@ export default function HomePage() {
 
           <div className="programs-five-grid">
             {programs.map((prog, idx) => (
-              <div key={idx} className="prog-item-card">
+              <div key={idx} className={`prog-item-card reveal-on-scroll reveal-delay-${(idx % 5) + 1}`}>
                 <div className="prog-item-img">
                   <Image
                     src={prog.image}
@@ -249,7 +249,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. Our Impact Banner Card */}
-      <section className="impact-banner-section">
+      <section className="impact-banner-section reveal-on-scroll">
         <div className="container">
           <div className="impact-banner-card">
             <div className="impact-banner-bg">

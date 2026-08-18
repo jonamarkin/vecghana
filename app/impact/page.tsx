@@ -38,7 +38,7 @@ export default function ImpactPage() {
       {/* Saving Hearts Project Feature */}
       <section style={{ padding: "4rem 0" }}>
         <div className="container">
-          <div className="impact-banner-card" style={{ marginBottom: "4rem" }}>
+          <div className="impact-banner-card reveal-on-scroll" style={{ marginBottom: "4rem" }}>
             <div className="impact-banner-bg">
               <Image
                 src="/images/choir-4.jpg"
@@ -68,14 +68,14 @@ export default function ImpactPage() {
           </div>
 
           {/* Three Outreach Pillars */}
-          <div style={{ textAlign: "center", maxWidth: "650px", margin: "0 auto 3rem" }}>
+          <div style={{ textAlign: "center", maxWidth: "650px", margin: "0 auto 3rem" }} className="reveal-on-scroll">
             <div className="badge-pill">Benevolence Pillars</div>
             <h2>How We Serve Our Community</h2>
             <p>Guided by Christ&apos;s love, our choir actively engages in regular benevolence and community support.</p>
           </div>
 
           <div className="voice-four-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-1">
               <div className="voice-clean-icon" style={{ background: "rgba(255, 122, 0, 0.1)", color: "var(--color-secondary)" }}>
                 <Heart size={22} />
               </div>
@@ -85,7 +85,7 @@ export default function ImpactPage() {
               </p>
             </div>
 
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-2">
               <div className="voice-clean-icon" style={{ background: "rgba(74, 21, 75, 0.1)", color: "var(--color-primary)" }}>
                 <Users size={22} />
               </div>
@@ -95,7 +95,7 @@ export default function ImpactPage() {
               </p>
             </div>
 
-            <div className="voice-clean-card">
+            <div className="voice-clean-card reveal-on-scroll reveal-delay-3">
               <div className="voice-clean-icon" style={{ background: "rgba(255, 184, 0, 0.15)", color: "#B38600" }}>
                 <Baby size={22} />
               </div>
@@ -109,7 +109,7 @@ export default function ImpactPage() {
       </section>
 
       {/* Contained Bottom Banner */}
-      <section className="impact-banner-section">
+      <section className="impact-banner-section reveal-on-scroll">
         <div className="container">
           <div className="impact-banner-card">
             <div className="impact-banner-bg">

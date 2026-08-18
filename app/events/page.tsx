@@ -4,7 +4,6 @@ import Image from "next/image";
 import {
   ChevronRight,
   Globe,
-  CheckCircle,
   Sparkles,
   ArrowRight,
 } from "lucide-react";
@@ -38,7 +37,7 @@ export default function EventsPage() {
       {/* Featured Tour Spotlight */}
       <section style={{ padding: "4rem 0" }}>
         <div className="container">
-          <div className="impact-banner-card" style={{ marginBottom: "4rem" }}>
+          <div className="impact-banner-card reveal-on-scroll" style={{ marginBottom: "4rem" }}>
             <div className="impact-banner-bg">
               <Image
                 src="/images/choir-8.jpg"
@@ -73,14 +72,14 @@ export default function EventsPage() {
           </div>
 
           {/* Signature Productions List */}
-          <div style={{ marginBottom: "2.5rem" }}>
+          <div style={{ marginBottom: "2.5rem" }} className="reveal-on-scroll">
             <div className="badge-pill">Annual Productions</div>
             <h2>Signature Concert Series</h2>
           </div>
 
           <div>
             {events.slice(1).map((event) => (
-              <div key={event.id} className="event-clean-card">
+              <div key={event.id} className="event-clean-card reveal-on-scroll">
                 <div className="event-clean-img">
                   <Image
                     src={event.image}
@@ -123,7 +122,7 @@ export default function EventsPage() {
       </section>
 
       {/* Contained Bottom Banner */}
-      <section className="impact-banner-section">
+      <section className="impact-banner-section reveal-on-scroll">
         <div className="container">
           <div className="impact-banner-card">
             <div className="impact-banner-bg">
