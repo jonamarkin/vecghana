@@ -7,7 +7,7 @@ export default function HomePage() {
     {
       title: "Worship & Concerts",
       desc: "Spirit-filled ministrations that inspire and uplift.",
-      image: "/images/choir-1.jpg",
+      image: "/images/choir-7.jpg",
       link: "/events",
     },
     {
@@ -44,8 +44,8 @@ export default function HomePage() {
           <div className="hero-card">
             <div className="hero-card-img">
               <Image
-                src="/images/choir-7.jpg"
-                alt="VocalEssence Chorale Ghana performing live on stage"
+                src="/images/choir-1.jpg"
+                alt="VocalEssence Chorale Ghana performing live in royal robes"
                 fill
                 priority
                 style={{ objectFit: "cover" }}
