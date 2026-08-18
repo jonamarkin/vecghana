@@ -30,29 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (mobileMenuBtn && mobileNav) {
         mobileMenuBtn.addEventListener('click', () => {
-            const isExpanded = mobileNav.style.display === 'flex';
-            
-            if (isExpanded) {
-                mobileNav.style.display = 'none';
-            } else {
-                mobileNav.style.display = 'flex';
-                mobileNav.style.flexDirection = 'column';
-                mobileNav.style.position = 'absolute';
-                mobileNav.style.top = '100%';
-                mobileNav.style.left = '0';
-                mobileNav.style.width = '100%';
-                mobileNav.style.backgroundColor = '#121212';
-                mobileNav.style.padding = '1rem 2rem 2rem';
-                mobileNav.style.gap = '1.25rem';
-                mobileNav.style.zIndex = '999';
-                mobileNav.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.5)';
-            }
+            const isActive = mobileNav.classList.toggle('active');
+            document.body.style.overflow = isActive ? 'hidden' : '';
         });
 
         // Close mobile nav when link clicked
-        mobileNav.querySelectorAll('.nav-link').forEach(link => {
+        mobileNav.querySelectorAll('.nav-link, .btn').forEach(link => {
             link.addEventListener('click', () => {
-                mobileNav.style.display = 'none';
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
             });
         });
     }
