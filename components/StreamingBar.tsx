@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Music, Disc, Youtube, Video, Facebook, Instagram, Sparkles } from "lucide-react";
+import { Music, Disc, Youtube, Video, Facebook, Instagram, Sparkles, Headphones } from "lucide-react";
 
 export default function StreamingBar() {
   return (
@@ -28,6 +28,14 @@ export default function StreamingBar() {
         className="stream-pill youtube"
       >
         <Youtube size={16} /> YouTube
+      </a>
+      <a
+        href="https://audiomack.com/vocalessence-chorale"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="stream-pill audiomack"
+      >
+        <Headphones size={16} /> Audiomack
       </a>
       <Link
         href="/music"

@@ -563,7 +563,7 @@ img, video, iframe, svg {
 /* Stats Bar */
 .stats-bar-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     margin-top: clamp(2.5rem, 4vw, 3.5rem);
     padding: clamp(1.5rem, 3vw, 2rem) 0;
     border-top: 1px solid var(--color-border);
@@ -1371,6 +1371,7 @@ textarea.form-input {
 .stream-pill.spotify:hover { background: #1DB954; color: white; border-color: #1DB954; }
 .stream-pill.apple:hover { background: #FA243C; color: white; border-color: #FA243C; }
 .stream-pill.youtube:hover { background: #FF0000; color: white; border-color: #FF0000; }
+.stream-pill.audiomack:hover { background: #FFA200; color: #111; border-color: #FFA200; }
 
 /* ==========================================================================
    Footer
@@ -1575,7 +1576,8 @@ textarea.form-input {
         gap: 1.5rem 0;
     }
 
-    .stat-box:nth-child(2)::after {
+    .stat-box:nth-child(2)::after,
+    .stat-box:nth-child(4)::after {
         display: none;
     }
 

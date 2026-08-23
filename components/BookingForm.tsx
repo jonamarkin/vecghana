@@ -6,6 +6,7 @@ import { Send, CheckCircle2 } from "lucide-react";
 export default function BookingForm({ isCompact = false }: { isCompact?: boolean }) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [eventType, setEventType] = useState("Wedding Ceremony");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -92,7 +93,14 @@ export default function BookingForm({ isCompact = false }: { isCompact?: boolean
           </div>
           <div className="form-field">
             <label htmlFor="eventType">Event Category *</label>
-            <select id="eventType" className="form-input" defaultValue="Wedding Ceremony" required>
+            <select
+              id="eventType"
+              name="eventType"
+              className="form-input"
+              value={eventType}
+              onChange={(event) => setEventType(event.target.value)}
+              required
+            >
               <option value="Wedding Ceremony">Wedding Ceremony & Reception</option>
               <option value="Concert / Ministration">Church Ministration / Concert</option>
               <option value="Corporate / State Event">Corporate Gala / State Function</option>
@@ -101,6 +109,28 @@ export default function BookingForm({ isCompact = false }: { isCompact?: boolean
               <option value="Other">Other Engagement</option>
             </select>
           </div>
+
+          {eventType === "Other" && (
+            <div className="form-field">
+              <label htmlFor="otherEngagement">Specify Engagement *</label>
+              <select
+                id="otherEngagement"
+                name="otherEngagement"
+                className="form-input"
+                defaultValue=""
+                required
+              >
+                <option value="" disabled>Select an engagement</option>
+                <option value="Private Celebration">Private Celebration</option>
+                <option value="Awards / Dinner">Awards Ceremony / Dinner</option>
+                <option value="Product Launch">Product Launch / Brand Event</option>
+                <option value="Media / Studio">Media Appearance / Studio Session</option>
+                <option value="Community / Charity">Community / Charity Event</option>
+                <option value="Educational">School / Educational Engagement</option>
+                <option value="Other - describe below">Other — describe in event details</option>
+              </select>
+            </div>
+          )}
 
           {!isCompact && (
             <>

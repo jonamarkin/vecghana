@@ -32,6 +32,7 @@ export default function JsonLd() {
     "sameAs": [
       "https://open.spotify.com/artist/44LB81BhfbdhHJkogzbKyW",
       "https://music.apple.com/us/artist/vocalessence-chorale/1561470636",
+      "https://audiomack.com/vocalessence-chorale",
       "https://www.youtube.com/@VocalEssenceChoraleGhana",
       "https://www.tiktok.com/@vecghana",
       "https://www.facebook.com/vecghana",

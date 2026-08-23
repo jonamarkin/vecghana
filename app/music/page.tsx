@@ -15,16 +15,16 @@ import { albums } from "@/data/discography";
 export const metadata: Metadata = {
   title: "Music & Discography | Albums, Highlife & Streaming",
   description:
-    "Stream the official discography of VocalEssence Chorale Ghana: Ayeyi Ndwom, Harmony of a Decade, Carols from VEC, and Ghanaian choral highlife on Spotify, Apple Music, and YouTube.",
+    "Stream the official discography of VocalEssence Chorale Ghana: Ayeyi Ndwom, Harmony of a Decade, Carols from VEC, and Ghanaian choral highlife on Spotify, Apple Music, Audiomack, and YouTube.",
   alternates: {
     canonical: "https://vecghana.com/music",
   },
   openGraph: {
     title: "Music & Discography | VocalEssence Chorale Ghana",
     description:
-      "Explore 6 studio and live albums from VocalEssence Chorale Ghana. Stream on Spotify, Apple Music, YouTube, and Boomplay.",
+      "Explore 6 studio and live albums from VocalEssence Chorale Ghana. Stream on Spotify, Apple Music, Audiomack, YouTube, and Boomplay.",
     url: "https://vecghana.com/music",
-    images: ["https://vecghana.com/images/choir-1.jpg"],
+    images: ["https://vecghana.com/images/albums/ayeyi-ndwom.jpg"],
   },
 };
 
@@ -70,6 +70,14 @@ export default function MusicPage() {
             >
               <Youtube size={15} /> YouTube Channel
             </a>
+            <a
+              href="https://audiomack.com/vocalessence-chorale"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="stream-pill audiomack"
+            >
+              <Headphones size={15} /> Audiomack Artist Page
+            </a>
           </div>
         </div>
       </section>
@@ -88,7 +96,7 @@ export default function MusicPage() {
                 <div className="album-clean-art">
                   <Image
                     src={album.image}
-                    alt={album.title}
+                    alt={`${album.title} official album cover`}
                     fill
                     style={{ objectFit: "cover" }}
                   />
@@ -126,6 +134,14 @@ export default function MusicPage() {
                         <Youtube size={14} /> YouTube
                       </a>
                     )}
+                    <a
+                      href={album.audiomackUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-outline-dark btn-sm"
+                    >
+                      <Headphones size={14} /> Audiomack
+                    </a>
                   </div>
                 </div>
               </div>
@@ -199,6 +215,15 @@ export default function MusicPage() {
                 >
                   <Youtube size={15} /> YouTube Music
                 </a>
+                <a
+                  href="https://audiomack.com/vocalessence-chorale"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="stream-pill audiomack"
+                  style={{ background: "#FFA200", color: "#111", borderColor: "#FFA200" }}
+                >
+                  <Headphones size={15} /> Audiomack
+                </a>
                 <span className="stream-pill" style={{ background: "rgba(255, 255, 255, 0.15)", color: "white", borderColor: "transparent" }}>
                   <Radio size={15} /> Boomplay
                 </span>
@@ -209,7 +234,7 @@ export default function MusicPage() {
                   <Music size={15} /> Deezer
                 </span>
                 <span className="stream-pill" style={{ background: "rgba(255, 255, 255, 0.15)", color: "white", borderColor: "transparent" }}>
-                  <Disc size={15} /> Tidal & Audiomack
+                  <Disc size={15} /> Tidal
                 </span>
               </div>
             </div>

@@ -12,6 +12,7 @@ import {
   Instagram,
   Youtube,
   Video,
+  Headphones,
 } from "lucide-react";
 import BookingForm from "@/components/BookingForm";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -127,6 +128,16 @@ export default function ContactPage() {
                 aria-label="Apple Music"
               >
                 <Disc size={15} />
+              </a>
+              <a
+                href="https://audiomack.com/vocalessence-chorale"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-btn"
+                style={{ borderColor: "var(--color-border)", color: "var(--color-text-main)", background: "white" }}
+                aria-label="Audiomack"
+              >
+                <Headphones size={15} />
               </a>
               <a
                 href="https://www.facebook.com/vecghana"

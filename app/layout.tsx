@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | VocalEssence Chorale Ghana",
   },
   description:
-    "Official website, discography, and event booking platform for VocalEssence Chorale Ghana. Stream our music on Spotify, Apple Music, and YouTube.",
+    "Official website, discography, and event booking platform for VocalEssence Chorale Ghana. Stream our music on Spotify, Apple Music, Audiomack, and YouTube.",
   keywords: [
     "VocalEssence Chorale Ghana",
     "VocalEssence Chorale",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "VocalEssence Chorale Ghana | In Harmony We Sing",
     description:
-      "Official website and artist profile for VocalEssence Chorale Ghana. Stream our albums on Spotify & Apple Music, book us for events, and support our charity projects.",
+      "Official website and artist profile for VocalEssence Chorale Ghana. Stream our albums on Spotify, Apple Music, and Audiomack, book us for events, and support our charity projects.",
     url: "https://vecghana.com",
     siteName: "VocalEssence Chorale Ghana",
     images: [

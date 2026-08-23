@@ -175,6 +175,14 @@ export default function HomePage() {
               <div className="stat-num">1</div>
               <div className="stat-text">Purpose</div>
             </div>
+            <div className="stat-box">
+              <div className="stat-num">4M+</div>
+              <div className="stat-text">Estimated Digital Streams</div>
+            </div>
+            <div className="stat-box">
+              <div className="stat-num">23K+</div>
+              <div className="stat-text">Estimated Online Following</div>
+            </div>
           </div>
         </div>
       </section>
