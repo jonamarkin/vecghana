@@ -58,7 +58,7 @@ export default function AboutPage() {
                 In 2013, a circle of devoted young choristers in Dansoman, Accra, came together bound by a shared conviction: that choral music could be elevated into a vibrant, soul-stirring vehicle for Christian worship, Ghanaian cultural preservation, and world-class artistic excellence.
               </p>
               <p>
-                Over the past 13+ years, VocalEssence Chorale has staged dozens of acclaimed concert productions, represented Ghana at international festivals, released 6 studio and live albums, and spearheaded life-changing philanthropic initiatives.
+                Over the past 13+ years, VocalEssence Chorale has staged dozens of acclaimed concert productions, represented Ghana at international festivals, released 10 albums, EPs, and live recordings, and spearheaded life-changing philanthropic initiatives.
               </p>
               <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap", marginTop: "1.5rem" }}>
                 <Link href="/music" className="btn btn-primary">

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Music & Discography | VocalEssence Chorale Ghana",
     description:
-      "Explore 6 studio and live albums from VocalEssence Chorale Ghana. Stream on Spotify, Apple Music, Audiomack, YouTube, and Boomplay.",
+      "Explore 10 albums, EPs, and live recordings from VocalEssence Chorale Ghana. Stream on Spotify, Apple Music, Audiomack, YouTube, and Boomplay.",
     url: "https://vecghana.com/music",
     images: ["https://vecghana.com/images/albums/ayeyi-ndwom.jpg"],
   },
@@ -87,7 +87,7 @@ export default function MusicPage() {
         <div className="container">
           <div style={{ marginBottom: "2.5rem" }}>
             <div className="badge-pill">Album Catalog</div>
-            <h2>Albums & Live Recordings</h2>
+            <h2>Albums, EPs & Live Recordings</h2>
           </div>
 
           <div className="discography-three-grid">

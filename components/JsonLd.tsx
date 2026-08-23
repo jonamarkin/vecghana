@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { albums } from "@/data/discography";
 
 export default function JsonLd() {
   const structuredData = {
@@ -46,44 +47,14 @@ export default function JsonLd() {
       "areaServed": ["GH", "Worldwide"],
       "availableLanguage": ["English", "Twi", "Ga", "Fante"]
     },
-    "album": [
-      {
-        "@type": "MusicAlbum",
-        "name": "Ayeyi Ndwom",
-        "datePublished": "2024",
-        "musicReleaseFormat": "DigitalFormat"
-      },
-      {
-        "@type": "MusicAlbum",
-        "name": "Harmony of a Decade",
-        "datePublished": "2023",
-        "musicReleaseFormat": "LiveAlbum"
-      },
-      {
-        "@type": "MusicAlbum",
-        "name": "Carols From VEC II",
-        "datePublished": "2022",
-        "musicReleaseFormat": "DigitalFormat"
-      },
-      {
-        "@type": "MusicAlbum",
-        "name": "The Strife Is O'er",
-        "datePublished": "2022",
-        "musicReleaseFormat": "DigitalFormat"
-      },
-      {
-        "@type": "MusicAlbum",
-        "name": "Oman Ghana",
-        "datePublished": "2021",
-        "musicReleaseFormat": "DigitalFormat"
-      },
-      {
-        "@type": "MusicAlbum",
-        "name": "Nyame Ye Osahen",
-        "datePublished": "2020",
-        "musicReleaseFormat": "DigitalFormat"
-      }
-    ]
+    "album": albums.map((album) => ({
+      "@type": "MusicAlbum",
+      "name": album.title,
+      "datePublished": album.year,
+      "image": `https://vecghana.com${album.image}`,
+      "url": album.appleMusicUrl,
+      "albumReleaseType": album.tag === "EP" ? "EPRelease" : "AlbumRelease"
+    }))
   };
 
   return (
