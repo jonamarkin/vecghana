@@ -44,13 +44,13 @@ export default function HomePage() {
           <div className="hero-editorial-grid">
             {/* Left: Editorial & Call to Action */}
             <div className="hero-editorial-left">
-              <div className="badge-pill">EST. 2013 • VOCALESSENCE CHORALE</div>
+              <div className="badge-pill">EST. 2013 • VOCALESSENCE CHORALE GHANA</div>
               <h1 className="hero-editorial-title">
                 In Harmony.<br />
                 We Sing.
               </h1>
               <p className="hero-editorial-desc">
-                A passionate community of voices spreading faith, cultural heritage, and choral excellence across Ghana and the world through inspiring sacred and highlife ministrations.
+                VocalEssence Chorale Ghana is a passionate community of voices spreading faith, cultural heritage, and choral excellence across Ghana and the world through inspiring sacred and highlife ministrations.
               </p>
               <div className="hero-editorial-actions">
                 <Link href="/music" className="btn btn-primary">

@@ -56,7 +56,7 @@ export default function Header() {
           <Link href="/" className="site-logo" onClick={() => setMobileMenuOpen(false)}>
             <Image
               src="/images/logo.png"
-              alt="VocalEssence Chorale"
+              alt="VocalEssence Chorale Ghana"
               width={38}
               height={38}
               className="logo-graphic"
@@ -64,7 +64,7 @@ export default function Header() {
             />
             <div className="logo-words">
               <strong>VocalEssence</strong>
-              <span>CHORALE</span>
+              <span>CHORALE GHANA</span>
             </div>
           </Link>
 

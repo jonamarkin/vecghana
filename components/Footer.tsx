@@ -21,14 +21,14 @@ export default function Footer() {
           <Link href="/" className="site-logo">
             <Image
               src="/images/logo.png"
-              alt="VocalEssence Chorale"
+              alt="VocalEssence Chorale Ghana"
               width={38}
               height={38}
               className="logo-graphic"
             />
             <div className="logo-words">
               <strong>VocalEssence</strong>
-              <span>CHORALE</span>
+              <span>CHORALE GHANA</span>
             </div>
           </Link>
           <p className="footer-brand-text">
