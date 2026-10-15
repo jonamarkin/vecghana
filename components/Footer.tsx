@@ -12,6 +12,8 @@ import {
   Video,
 } from "lucide-react";
 
+import { siteConfig } from "@/data/siteConfig";
+
 export default function Footer() {
   return (
     <footer className="site-footer">
@@ -21,7 +23,7 @@ export default function Footer() {
           <Link href="/" className="site-logo">
             <Image
               src="/images/logo.png"
-              alt="VocalEssence Chorale Ghana"
+              alt={siteConfig.name}
               width={38}
               height={38}
               className="logo-graphic"
@@ -32,14 +34,11 @@ export default function Footer() {
             </div>
           </Link>
           <p className="footer-brand-text">
-            To God be the Glory,<br />
-            We sing to inspire, impact,<br />
-            and ignite a passion for Christ<br />
-            through music.
+            {siteConfig.subTagline}
           </p>
           <div className="footer-social-row">
             <a
-              href="https://www.facebook.com/vecghana"
+              href={siteConfig.socialLinks.facebook}
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-btn"
@@ -48,7 +47,7 @@ export default function Footer() {
               <Facebook size={15} />
             </a>
             <a
-              href="https://www.instagram.com/vocalessencechoraleghana/"
+              href={siteConfig.socialLinks.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-btn"
@@ -57,7 +56,7 @@ export default function Footer() {
               <Instagram size={15} />
             </a>
             <a
-              href="https://www.youtube.com/@VocalEssenceChoraleGhana"
+              href={siteConfig.socialLinks.youtube}
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-btn"
@@ -66,7 +65,7 @@ export default function Footer() {
               <Youtube size={15} />
             </a>
             <a
-              href="https://www.tiktok.com/@vecghana"
+              href={siteConfig.socialLinks.tiktok}
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-btn"
@@ -81,13 +80,11 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Quick Links</h4>
           <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/music">Music</Link></li>
-            <li><Link href="/events">Events</Link></li>
-            <li><Link href="/gallery">Gallery</Link></li>
-            <li><Link href="/impact">Outreach</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            {siteConfig.navigation.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href}>{item.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -99,7 +96,7 @@ export default function Footer() {
             <li><Link href="/about">Core Values</Link></li>
             <li><Link href="/impact">Our Impact</Link></li>
             <li><Link href="/contact">Book Us</Link></li>
-            <li><Link href="/events">News</Link></li>
+            <li><Link href="/events">News & Tours</Link></li>
           </ul>
         </div>
 
@@ -108,13 +105,13 @@ export default function Footer() {
           <h4>Connect</h4>
           <ul className="footer-contact-list">
             <li>
-              <Phone size={14} /> <a href="tel:+233200079728">+233 20 007 9728</a>
+              <Phone size={14} /> <a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phoneDisplay}</a>
             </li>
             <li>
-              <Mail size={14} /> <a href="mailto:vocalessencechorale@gmail.com">vocalessencechorale@gmail.com</a>
+              <Mail size={14} /> <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
             </li>
             <li>
-              <MapPin size={14} /> Accra, Ghana
+              <MapPin size={14} /> {siteConfig.contact.address}
             </li>
           </ul>
         </div>
@@ -129,7 +126,7 @@ export default function Footer() {
             className="newsletter-input-group"
             onSubmit={(e) => {
               e.preventDefault();
-              alert("Thank you for subscribing to VocalEssence Chorale!");
+              alert(`Thank you for subscribing to ${siteConfig.name}!`);
             }}
           >
             <input type="email" placeholder="Enter your email" required />
@@ -142,7 +139,7 @@ export default function Footer() {
 
       <div className="container">
         <div className="footer-copyright-bar">
-          <p>&copy; {new Date().getFullYear()} VocalEssence Chorale Ghana. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

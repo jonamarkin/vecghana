@@ -1,40 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Play } from "lucide-react";
+import { homeContent } from "@/data/homeContent";
 
 export default function HomePage() {
-  const programs = [
-    {
-      title: "Worship & Concerts",
-      desc: "Spirit-filled ministrations that inspire and uplift.",
-      image: "/images/choir-7.jpg",
-      link: "/events",
-    },
-    {
-      title: "Outreach & Donations",
-      desc: "Serving communities through acts of love and compassion.",
-      image: "/images/choir-4.jpg",
-      link: "/impact",
-    },
-    {
-      title: "Workshops & Training",
-      desc: "Raising and equipping the next generation.",
-      image: "/images/choir-2.jpg",
-      link: "/about",
-    },
-    {
-      title: "Collaborations",
-      desc: "Partnering with churches and organizations.",
-      image: "/images/choir-8.jpg",
-      link: "/events",
-    },
-    {
-      title: "Recordings",
-      desc: "Creating timeless music that spreads the message.",
-      image: "/images/choir-9.jpg",
-      link: "/music",
-    },
-  ];
+  const {
+    hero,
+    whoWeAre,
+    statsBar,
+    essence,
+    internationalTour,
+    programs,
+    impactBanner,
+  } = homeContent;
 
   return (
     <>
@@ -44,37 +22,34 @@ export default function HomePage() {
           <div className="hero-editorial-grid">
             {/* Left: Editorial & Call to Action */}
             <div className="hero-editorial-left">
-              <div className="badge-pill">EST. 2013 • VOCALESSENCE CHORALE GHANA</div>
+              <div className="badge-pill">{hero.badge}</div>
               <h1 className="hero-editorial-title">
-                In Harmony.<br />
-                We Sing.
+                {hero.titleLine1}<br />
+                {hero.titleLine2}
               </h1>
               <p className="hero-editorial-desc">
-                VocalEssence Chorale Ghana is a passionate community of voices spreading faith, cultural heritage, and choral excellence across Ghana and the world through inspiring sacred and highlife ministrations.
+                {hero.description}
               </p>
               <div className="hero-editorial-actions">
-                <Link href="/music" className="btn btn-primary">
-                  Explore Music
+                <Link href={hero.primaryCta.href} className="btn btn-primary">
+                  {hero.primaryCta.label}
                 </Link>
-                <Link href="/contact" className="btn btn-outline-dark">
-                  Book Us
+                <Link href={hero.secondaryCta.href} className="btn btn-outline-dark">
+                  {hero.secondaryCta.label}
                 </Link>
               </div>
               <div className="hero-editorial-stats">
-                <div className="hero-stat-item">
-                  <span className="hero-stat-val">13+</span>
-                  <span className="hero-stat-lbl">Years</span>
-                </div>
-                <span className="hero-stat-divider" aria-hidden="true">•</span>
-                <div className="hero-stat-item">
-                  <span className="hero-stat-val">10+</span>
-                  <span className="hero-stat-lbl">Albums</span>
-                </div>
-                <span className="hero-stat-divider" aria-hidden="true">•</span>
-                <div className="hero-stat-item">
-                  <span className="hero-stat-val">100+</span>
-                  <span className="hero-stat-lbl">Choristers</span>
-                </div>
+                {hero.stats.map((stat, idx) => (
+                  <span key={stat.label} style={{ display: "inline-flex", alignItems: "center", gap: "0.85rem" }}>
+                    <div className="hero-stat-item">
+                      <span className="hero-stat-val">{stat.value}</span>
+                      <span className="hero-stat-lbl">{stat.label}</span>
+                    </div>
+                    {idx < hero.stats.length - 1 && (
+                      <span className="hero-stat-divider" aria-hidden="true">•</span>
+                    )}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -82,8 +57,8 @@ export default function HomePage() {
             <div className="hero-editorial-right">
               <div className="hero-stage-frame">
                 <Image
-                  src="/images/choir-1.jpg"
-                  alt="VocalEssence Chorale Ghana performing live on stage in royal vestments"
+                  src={hero.image.src}
+                  alt={hero.image.alt}
                   fill
                   priority
                   sizes="(max-width: 860px) 100vw, (max-width: 1280px) 50vw, 620px"
@@ -91,16 +66,16 @@ export default function HomePage() {
                 />
                 <div className="hero-stage-vignette"></div>
                 <Link
-                  href="/music#ayeyi-ndwom"
+                  href={hero.featuredTrack.href}
                   className="hero-floating-audio"
-                  aria-label="Listen to featured track Ayeyi Ndwom on Music page"
+                  aria-label={`Listen to featured track ${hero.featuredTrack.title} on Music page`}
                 >
                   <span className="hero-audio-play-badge">
                     <Play size={13} fill="currentColor" />
                   </span>
                   <div className="hero-audio-info">
-                    <span className="hero-audio-tag">Featured Release</span>
-                    <span className="hero-audio-song">Ayeyi Ndwom</span>
+                    <span className="hero-audio-tag">{hero.featuredTrack.tag}</span>
+                    <span className="hero-audio-song">{hero.featuredTrack.title}</span>
                   </div>
                   <ArrowRight size={14} className="hero-audio-arrow" />
                 </Link>
@@ -118,29 +93,26 @@ export default function HomePage() {
             <div className="who-left-col">
               <div className="who-image-container">
                 <Image
-                  src="/images/choir-2.jpg"
-                  alt="VocalEssence Chorale Fellowship"
+                  src={whoWeAre.featureImage.src}
+                  alt={whoWeAre.featureImage.alt}
                   fill
                   style={{ objectFit: "cover" }}
                 />
               </div>
-              <div className="badge-pill">Who We Are</div>
+              <div className="badge-pill">{whoWeAre.badge}</div>
               <div className="who-text-wrap">
                 <div className="who-headline-wrap">
                   <h2>
-                    A Community<br />
-                    Built on Faith,<br />
-                    Excellence & Love
+                    {whoWeAre.titleLine1}<br />
+                    {whoWeAre.titleLine2}<br />
+                    {whoWeAre.titleLine3}
                   </h2>
                 </div>
                 <div className="who-desc-wrap">
-                  <p>
-                    Founded with a vision to raise a generation of worshipers and ambassadors of Christ through excellence in choral music.
-                  </p>
-                  <p>
-                    We use our music to make a positive and lasting difference in our communities and beyond.
-                  </p>
-                  <Link href="/about" className="btn btn-primary" style={{ marginTop: "0.5rem" }}>
+                  {whoWeAre.paragraphs.map((p, idx) => (
+                    <p key={idx}>{p}</p>
+                  ))}
+                  <Link href={whoWeAre.learnMoreHref} className="btn btn-primary" style={{ marginTop: "0.5rem" }}>
                     Learn More
                   </Link>
                 </div>
@@ -153,19 +125,17 @@ export default function HomePage() {
               <div className="mission-card">
                 <div className="mission-card-bg">
                   <Image
-                    src="/images/choir-3.jpg"
-                    alt="Our Mission"
+                    src={whoWeAre.missionCard.image}
+                    alt={whoWeAre.missionCard.title}
                     fill
                     style={{ objectFit: "cover" }}
                   />
                 </div>
                 <div className="mission-card-overlay"></div>
                 <div className="mission-card-content">
-                  <h3>Our Mission</h3>
-                  <p>
-                    To glorify God, inspire hearts, and make a difference through the power of music.
-                  </p>
-                  <Link href="/about" className="btn-circle-arrow dark-card-arrow" aria-label="Our Mission">
+                  <h3>{whoWeAre.missionCard.title}</h3>
+                  <p>{whoWeAre.missionCard.desc}</p>
+                  <Link href={whoWeAre.missionCard.href} className="btn-circle-arrow dark-card-arrow" aria-label={whoWeAre.missionCard.title}>
                     <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -175,18 +145,16 @@ export default function HomePage() {
               <div className="vision-card">
                 <div className="vision-card-bg">
                   <Image
-                    src="/images/choir-5.jpg"
-                    alt="Our Vision"
+                    src={whoWeAre.visionCard.image}
+                    alt={whoWeAre.visionCard.title}
                     fill
                     style={{ objectFit: "cover" }}
                   />
                 </div>
                 <div className="mission-card-content">
-                  <h3>Our Vision</h3>
-                  <p>
-                    To be a leading choir that impacts nations and transforms lives.
-                  </p>
-                  <Link href="/about" className="btn-circle-arrow dark-card-arrow" aria-label="Our Vision">
+                  <h3>{whoWeAre.visionCard.title}</h3>
+                  <p>{whoWeAre.visionCard.desc}</p>
+                  <Link href={whoWeAre.visionCard.href} className="btn-circle-arrow dark-card-arrow" aria-label={whoWeAre.visionCard.title}>
                     <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -196,30 +164,12 @@ export default function HomePage() {
 
           {/* Stats Bar */}
           <div className="stats-bar-grid">
-            <div className="stat-box">
-              <div className="stat-num">13+</div>
-              <div className="stat-text">Years of Ministry</div>
-            </div>
-            <div className="stat-box">
-              <div className="stat-num">100+</div>
-              <div className="stat-text">Performances</div>
-            </div>
-            <div className="stat-box">
-              <div className="stat-num">500+</div>
-              <div className="stat-text">Voices Impacted</div>
-            </div>
-            <div className="stat-box">
-              <div className="stat-num">1</div>
-              <div className="stat-text">Purpose</div>
-            </div>
-            <div className="stat-box">
-              <div className="stat-num">4M+</div>
-              <div className="stat-text">Estimated Digital Streams</div>
-            </div>
-            <div className="stat-box">
-              <div className="stat-num">23K+</div>
-              <div className="stat-text">Estimated Online Following</div>
-            </div>
+            {statsBar.map((item, idx) => (
+              <div key={idx} className="stat-box">
+                <div className="stat-num">{item.num}</div>
+                <div className="stat-text">{item.text}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -230,23 +180,21 @@ export default function HomePage() {
           <div className="essence-layout">
             <div className="essence-img-box">
               <Image
-                src="/images/choir-6.jpg"
-                alt="Harmony in Faith"
+                src={essence.image.src}
+                alt={essence.image.alt}
                 fill
                 style={{ objectFit: "cover" }}
               />
             </div>
             <div className="essence-content-box">
-              <div className="badge-pill">Our Essence</div>
+              <div className="badge-pill">{essence.badge}</div>
               <h2>
-                Harmony in Faith.<br />
-                Excellence in Sound.
+                {essence.titleLine1}<br />
+                {essence.titleLine2}
               </h2>
-              <p>
-                We blend rich harmonies with heartfelt worship, lifting voices that touch lives and glorify God. Every note we sing carries a message of hope, love, and transformation.
-              </p>
-              <Link href="/about" className="btn btn-primary">
-                About Us
+              <p>{essence.description}</p>
+              <Link href={essence.buttonHref} className="btn btn-primary">
+                {essence.buttonLabel}
               </Link>
             </div>
           </div>
@@ -259,8 +207,8 @@ export default function HomePage() {
           <div className="impact-banner-card">
             <div className="impact-banner-bg">
               <Image
-                src="/images/choir-8.jpg"
-                alt="Africa Sings Festival Cotonou Benin"
+                src={internationalTour.image.src}
+                alt={internationalTour.image.alt}
                 fill
                 style={{ objectFit: "cover" }}
               />
@@ -268,18 +216,16 @@ export default function HomePage() {
             <div className="impact-banner-overlay"></div>
             <div className="impact-banner-content" style={{ maxWidth: "640px" }}>
               <div className="badge-pill dark">
-                International Tour Spotlight
+                {internationalTour.badge}
               </div>
-              <h2>7th Africa Sings Festival | Cotonou, Benin</h2>
-              <p>
-                From <strong>October 11–15, 2023</strong>, VocalEssence Chorale Ghana proudly represented our nation at the 7th Edition of the Africa Sings Festival in Cotonou, Benin — sharing African choral harmonies, magnifying faith, and celebrating cultural unity across the continent.
-              </p>
+              <h2>{internationalTour.title}</h2>
+              <p>{internationalTour.description}</p>
               <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
-                <Link href="/events" className="btn btn-primary">
+                <Link href={internationalTour.tourLink} className="btn btn-primary">
                   Explore Tour Story
                 </Link>
                 <a
-                  href="https://www.tiktok.com/@vecghana/video/7289724643567602950"
+                  href={internationalTour.videoLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-outline-white"
@@ -337,21 +283,19 @@ export default function HomePage() {
           <div className="impact-banner-card">
             <div className="impact-banner-bg">
               <Image
-                src="/images/choir-4.jpg"
-                alt="Music That Changes Lives"
+                src={impactBanner.image.src}
+                alt={impactBanner.image.alt}
                 fill
                 style={{ objectFit: "cover" }}
               />
             </div>
             <div className="impact-banner-overlay"></div>
             <div className="impact-banner-content">
-              <div className="badge-pill dark">Our Impact</div>
-              <h2>Music That Changes Lives</h2>
-              <p>
-                From widows and orphanages to Korle Bu Children&apos;s Unit and the Saving Hearts Project, our music goes beyond the stage to touch hearts and transform lives.
-              </p>
-              <Link href="/impact" className="btn btn-primary">
-                See Our Impact
+              <div className="badge-pill dark">{impactBanner.badge}</div>
+              <h2>{impactBanner.title}</h2>
+              <p>{impactBanner.description}</p>
+              <Link href={impactBanner.buttonHref} className="btn btn-primary">
+                {impactBanner.buttonLabel}
               </Link>
             </div>
           </div>

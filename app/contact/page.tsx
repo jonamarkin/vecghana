@@ -17,6 +17,8 @@ import {
 import BookingForm from "@/components/BookingForm";
 import FaqAccordion from "@/components/FaqAccordion";
 
+import { siteConfig } from "@/data/siteConfig";
+
 export const metadata: Metadata = {
   title: "Book Us & Contact | Event Inquiries & Secretariat",
   description:
@@ -47,7 +49,7 @@ export default function ContactPage() {
           <div className="badge-pill">Connect & Bookings</div>
           <h1>Let&apos;s Create Something Memorable</h1>
           <p>
-            Partner with VocalEssence Chorale Ghana for weddings, corporate galas, church conventions, and state ceremonies. Our management team is ready to assist.
+            Partner with {siteConfig.name} for weddings, corporate galas, church conventions, and state ceremonies. Our management team is ready to assist.
           </p>
         </div>
       </section>
@@ -70,7 +72,7 @@ export default function ContactPage() {
                 </div>
                 <div className="contact-item-text">
                   <strong>Phone / WhatsApp</strong>
-                  <a href="tel:+233200079728">+233 20 007 9728</a>
+                  <a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phoneDisplay}</a>
                 </div>
               </li>
 
@@ -80,7 +82,7 @@ export default function ContactPage() {
                 </div>
                 <div className="contact-item-text">
                   <strong>Official Email</strong>
-                  <a href="mailto:vocalessencechorale@gmail.com">vocalessencechorale@gmail.com</a>
+                  <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
                 </div>
               </li>
 
@@ -90,7 +92,7 @@ export default function ContactPage() {
                 </div>
                 <div className="contact-item-text">
                   <strong>Location</strong>
-                  <span>Dansoman, Accra - Ghana</span>
+                  <span>{siteConfig.contact.address}</span>
                 </div>
               </li>
 
@@ -100,7 +102,7 @@ export default function ContactPage() {
                 </div>
                 <div className="contact-item-text">
                   <strong>Rehearsal Times</strong>
-                  <span>Thursdays & Saturdays (Dansoman)</span>
+                  <span>Thursdays & Saturdays ({siteConfig.location})</span>
                 </div>
               </li>
             </ul>
@@ -110,7 +112,7 @@ export default function ContactPage() {
             </div>
             <div className="footer-social-row">
               <a
-                href="https://open.spotify.com/artist/44LB81BhfbdhHJkogzbKyW"
+                href={siteConfig.streamingLinks.spotify}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-btn"
@@ -120,7 +122,7 @@ export default function ContactPage() {
                 <Music size={15} />
               </a>
               <a
-                href="https://music.apple.com/us/artist/vocalessence-chorale/1561470636"
+                href={siteConfig.streamingLinks.appleMusic}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-btn"
@@ -130,7 +132,7 @@ export default function ContactPage() {
                 <Disc size={15} />
               </a>
               <a
-                href="https://audiomack.com/vocalessence-chorale"
+                href={siteConfig.streamingLinks.audiomack}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-btn"
@@ -140,7 +142,7 @@ export default function ContactPage() {
                 <Headphones size={15} />
               </a>
               <a
-                href="https://www.facebook.com/vecghana"
+                href={siteConfig.socialLinks.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-btn"
@@ -150,7 +152,7 @@ export default function ContactPage() {
                 <Facebook size={15} />
               </a>
               <a
-                href="https://www.instagram.com/vocalessencechoraleghana/"
+                href={siteConfig.socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-btn"
@@ -160,7 +162,7 @@ export default function ContactPage() {
                 <Instagram size={15} />
               </a>
               <a
-                href="https://www.youtube.com/@VocalEssenceChoraleGhana"
+                href={siteConfig.socialLinks.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-btn"
@@ -170,7 +172,7 @@ export default function ContactPage() {
                 <Youtube size={15} />
               </a>
               <a
-                href="https://www.tiktok.com/@vecghana"
+                href={siteConfig.socialLinks.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-btn"

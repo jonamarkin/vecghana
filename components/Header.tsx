@@ -6,6 +6,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
+import { siteConfig } from "@/data/siteConfig";
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -39,15 +41,7 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
-  const navItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Music", href: "/music" },
-    { name: "Events", href: "/events" },
-    { name: "Outreach", href: "/impact" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Contact", href: "/contact" },
-  ];
+  const navItems = siteConfig.navigation;
 
   return (
     <>
