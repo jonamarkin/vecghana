@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 export default function HomePage() {
   const programs = [
@@ -38,34 +38,71 @@ export default function HomePage() {
 
   return (
     <>
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section: Balanced Modern Editorial */}
       <section className="hero-wrapper">
         <div className="container">
-          <div className="hero-card">
-            <div className="hero-card-img">
-              <Image
-                src="/images/choir-1.jpg"
-                alt="VocalEssence Chorale Ghana performing live in royal robes"
-                fill
-                priority
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div className="hero-card-overlay"></div>
-            <div className="hero-card-content">
-              <h1>
+          <div className="hero-editorial-grid">
+            {/* Left: Editorial & Call to Action */}
+            <div className="hero-editorial-left">
+              <div className="badge-pill">EST. 2013 • VOCALESSENCE CHORALE</div>
+              <h1 className="hero-editorial-title">
                 In Harmony.<br />
                 We Sing.
               </h1>
-              <p>
-                VocalEssence Chorale Ghana is a passionate community of voices spreading the message of hope, faith and love through choral music.
+              <p className="hero-editorial-desc">
+                A passionate community of voices spreading faith, cultural heritage, and choral excellence across Ghana and the world through inspiring sacred and highlife ministrations.
               </p>
-              <div className="hero-btn-group">
+              <div className="hero-editorial-actions">
                 <Link href="/music" className="btn btn-primary">
-                  Listen Now
+                  Explore Music
                 </Link>
-                <Link href="/contact" className="btn btn-outline-white">
+                <Link href="/contact" className="btn btn-outline-dark">
                   Book Us
+                </Link>
+              </div>
+              <div className="hero-editorial-stats">
+                <div className="hero-stat-item">
+                  <span className="hero-stat-val">13+</span>
+                  <span className="hero-stat-lbl">Years</span>
+                </div>
+                <span className="hero-stat-divider" aria-hidden="true">•</span>
+                <div className="hero-stat-item">
+                  <span className="hero-stat-val">10+</span>
+                  <span className="hero-stat-lbl">Albums</span>
+                </div>
+                <span className="hero-stat-divider" aria-hidden="true">•</span>
+                <div className="hero-stat-item">
+                  <span className="hero-stat-val">100+</span>
+                  <span className="hero-stat-lbl">Choristers</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Framed Stage Photography + Floating Audio Pill */}
+            <div className="hero-editorial-right">
+              <div className="hero-stage-frame">
+                <Image
+                  src="/images/choir-1.jpg"
+                  alt="VocalEssence Chorale Ghana performing live on stage in royal vestments"
+                  fill
+                  priority
+                  sizes="(max-width: 860px) 100vw, (max-width: 1280px) 50vw, 620px"
+                  style={{ objectFit: "cover" }}
+                />
+                <div className="hero-stage-vignette"></div>
+                <Link
+                  href="/music#ayeyi-ndwom"
+                  className="hero-floating-audio"
+                  aria-label="Listen to featured track Ayeyi Ndwom on Music page"
+                >
+                  <span className="hero-audio-play-badge">
+                    <Play size={13} fill="currentColor" />
+                  </span>
+                  <div className="hero-audio-info">
+                    <span className="hero-audio-tag">Featured Release</span>
+                    <span className="hero-audio-song">Ayeyi Ndwom</span>
+                  </div>
+                  <ArrowRight size={14} className="hero-audio-arrow" />
                 </Link>
               </div>
             </div>

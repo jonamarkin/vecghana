@@ -385,70 +385,206 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
-   Hero Section
+   Hero Section: Balanced Modern Editorial
    ========================================================================== */
 .hero-wrapper {
-    padding: 1.25rem 0 clamp(2.5rem, 4vw, 3.5rem);
+    padding: clamp(1.5rem, 3.5vw, 2.75rem) 0 clamp(2.5rem, 5vw, 4rem);
+    background-color: var(--color-bg);
 }
 
-.hero-card {
-    position: relative;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    min-height: clamp(460px, 55vh, 600px);
-    display: flex;
+.hero-editorial-grid {
+    display: grid;
+    grid-template-columns: 1.12fr 1fr;
+    gap: clamp(2rem, 4.5vw, 4.25rem);
     align-items: center;
-    background-color: var(--color-dark);
 }
 
-.hero-card-img {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+.hero-editorial-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.hero-card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center right;
-}
-
-.hero-card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(14, 14, 16, 0.95) 0%, rgba(14, 14, 16, 0.82) 42%, rgba(14, 14, 16, 0.25) 80%, transparent 100%);
-    z-index: 1;
-}
-
-.hero-card-content {
-    position: relative;
-    z-index: 2;
-    padding: clamp(2.5rem, 6vw, 4.5rem);
-    max-width: 600px;
-    color: white;
-}
-
-.hero-card-content h1 {
-    color: white;
-    font-size: clamp(2.5rem, 5.2vw, 4.2rem);
-    line-height: 1.1;
+.hero-editorial-left .badge-pill {
     margin-bottom: 1.25rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
 }
 
-.hero-card-content p {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+.hero-editorial-title {
+    font-size: clamp(2.6rem, 5.2vw, 4.25rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--color-text-main);
+    margin-bottom: 1.25rem;
+}
+
+.hero-editorial-desc {
+    font-size: clamp(1rem, 1.35vw, 1.12rem);
     line-height: 1.65;
+    color: var(--color-text-body);
+    max-width: 530px;
     margin-bottom: 2rem;
 }
 
-.hero-btn-group {
+.hero-editorial-actions {
     display: flex;
     gap: 0.85rem;
+    align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 2.25rem;
+}
+
+.hero-editorial-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--color-border);
+    width: 100%;
+    max-width: 480px;
+}
+
+.hero-stat-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.hero-stat-val {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.hero-stat-lbl {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.hero-stat-divider {
+    color: var(--color-border);
+    font-size: 1.1rem;
+    line-height: 1;
+    user-select: none;
+}
+
+/* Right Stage Photo Container */
+.hero-editorial-right {
+    position: relative;
+    width: 100%;
+}
+
+.hero-stage-frame {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4 / 3.35;
+    width: 100%;
+    box-shadow: 0 20px 48px -12px rgba(14, 14, 16, 0.12), 0 4px 16px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--color-border-light);
+    background-color: var(--color-surface-card);
+}
+
+.hero-stage-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-stage-frame:hover img {
+    transform: scale(1.02);
+}
+
+.hero-stage-vignette {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(14, 14, 16, 0.35) 100%);
+    pointer-events: none;
+}
+
+/* Floating Audio Pill */
+.hero-floating-audio {
+    position: absolute;
+    bottom: clamp(1rem, 2vw, 1.5rem);
+    right: clamp(1rem, 2vw, 1.5rem);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-full);
+    padding: 0.45rem 1rem 0.45rem 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 8px 24px -4px rgba(14, 14, 16, 0.16), 0 2px 8px rgba(0, 0, 0, 0.06);
+    text-decoration: none;
+    transition: all 0.25s ease;
+    z-index: 2;
+    max-width: calc(100% - 2rem);
+}
+
+.hero-floating-audio:hover {
+    background: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -4px rgba(74, 21, 75, 0.22);
+    border-color: rgba(74, 21, 75, 0.15);
+}
+
+.hero-audio-play-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-floating-audio:hover .hero-audio-play-badge {
+    transform: scale(1.08);
+    background-color: var(--color-primary-hover);
+}
+
+.hero-audio-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.25;
+}
+
+.hero-audio-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+}
+
+.hero-audio-song {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.hero-audio-arrow {
+    color: var(--color-text-muted);
+    transition: transform 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.hero-floating-audio:hover .hero-audio-arrow {
+    transform: translateX(3px);
+    color: var(--color-primary);
 }
 
 /* ==========================================================================
@@ -1552,6 +1688,16 @@ textarea.form-input {
         display: block;
     }
 
+    .hero-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+    }
+
+    .hero-stage-frame {
+        aspect-ratio: 16 / 10;
+        max-height: 480px;
+    }
+
     .who-grid,
     .essence-layout,
     .contact-clean-grid {
@@ -1600,12 +1746,47 @@ textarea.form-input {
 
 /* Mobile Phones (<= 560px) */
 @media (max-width: 560px) {
-    .hero-card {
-        min-height: 440px;
+    .hero-wrapper {
+        padding: 1.25rem 0 2.5rem;
     }
 
-    .hero-card-content {
-        padding: 2rem 1.5rem;
+    .hero-editorial-title {
+        font-size: clamp(2.2rem, 9.5vw, 2.85rem);
+    }
+
+    .hero-editorial-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.65rem;
+    }
+
+    .hero-editorial-actions .btn {
+        width: 100%;
+    }
+
+    .hero-editorial-stats {
+        gap: 0.85rem;
+        justify-content: space-between;
+        max-width: 100%;
+    }
+
+    .hero-stat-val {
+        font-size: 1.15rem;
+    }
+
+    .hero-stat-lbl {
+        font-size: 0.74rem;
+    }
+
+    .hero-stage-frame {
+        aspect-ratio: 16 / 11;
+        border-radius: var(--radius-md);
+    }
+
+    .hero-floating-audio {
+        bottom: 0.75rem;
+        right: 0.75rem;
+        padding: 0.4rem 0.85rem 0.4rem 0.45rem;
     }
 
     .who-text-wrap {
@@ -1630,15 +1811,6 @@ textarea.form-input {
 
     .form-field.full {
         grid-column: span 1;
-    }
-
-    .hero-btn-group {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .hero-btn-group .btn {
-        width: 100%;
     }
 
     .newsletter-input-group {
