@@ -57,9 +57,9 @@ export default function JsonLd() {
     })),
     "event": {
       "@type": "MusicEvent",
-      "name": "Christmas in Africa — Feliz Navidad XIII",
+      "name": "Christmas in Africa (Feliz Navidad XIII)",
       "description":
-        "Experience the warmth, rhythm, and harmony of the season at Christmas in Africa — Feliz Navidad XIII, the annual pre-Christmas concert by VocalEssence Chorale Ghana. Join us at Victory Bible Church Int. (Awoshie Baah Yard) for an unforgettable evening of rich African choral music, classic Christmas carols, and joyful celebration. Entry is completely FREE.",
+        "Experience the warmth, rhythm, and harmony of the season at Christmas in Africa (Feliz Navidad XIII), the annual pre-Christmas concert by VocalEssence Chorale Ghana. Join us at Victory Bible Church Int., Awoshie Baah Yard, for an unforgettable evening of rich African choral music, classic Christmas carols, and joyful celebration. Entry is completely free.",
       "startDate": "2026-12-04T17:00:00+00:00",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",

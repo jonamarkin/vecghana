@@ -1000,39 +1000,24 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
-   Upcoming Concert Spotlight Section
+   Upcoming Concert Section (Clean Editorial)
    ========================================================================== */
 .upcoming-concert-section {
     padding: clamp(2rem, 4vw, 3.5rem) 0;
 }
 
 .upcoming-concert-card {
-    position: relative;
-    background: var(--color-dark);
-    color: white;
+    background: var(--color-surface-soft);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 24px 56px -12px rgba(14, 14, 16, 0.28);
-}
-
-.upcoming-concert-bg-glow {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(circle at 15% 20%, rgba(74, 21, 75, 0.55) 0%, transparent 50%),
-        radial-gradient(circle at 85% 80%, rgba(255, 122, 0, 0.22) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
 }
 
 .upcoming-concert-grid {
-    position: relative;
-    z-index: 1;
     display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: clamp(1.75rem, 4vw, 3.25rem);
-    padding: clamp(1.75rem, 4vw, 3rem);
+    grid-template-columns: minmax(280px, 380px) 1fr;
+    gap: clamp(2rem, 4.5vw, 3.5rem);
+    padding: clamp(1.5rem, 3.5vw, 2.75rem);
     align-items: center;
 }
 
@@ -1042,20 +1027,14 @@ img, video, iframe, svg {
     aspect-ratio: 819 / 1024;
     border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: #141416;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-card);
 }
 
 .upcoming-poster-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.upcoming-poster-wrap:hover img {
-    transform: scale(1.02);
 }
 
 .upcoming-concert-body {
@@ -1064,109 +1043,88 @@ img, video, iframe, svg {
     align-items: flex-start;
 }
 
-.upcoming-badges-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-bottom: 1.1rem;
-}
-
-.badge-pill.gold {
-    background: linear-gradient(135deg, #F5C400 0%, #FF8A00 100%);
-    color: #111113;
-    margin-bottom: 0;
-    font-weight: 800;
-}
-
-.badge-pill.festive-red {
-    background: #D9232E;
-    color: #FFFFFF;
-    margin-bottom: 0;
-    font-weight: 800;
-}
-
 .upcoming-concert-body h2 {
-    color: #FFFFFF;
-    font-size: clamp(2rem, 3.8vw, 3rem);
-    line-height: 1.1;
-    margin-bottom: 0.65rem;
+    color: var(--color-text-main);
+    font-size: clamp(1.9rem, 3.4vw, 2.65rem);
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
 }
 
-.upcoming-concert-tagline {
-    color: #F7D354;
-    font-size: clamp(1rem, 1.4vw, 1.15rem);
-    font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-}
-
-.upcoming-concert-desc {
-    color: rgba(255, 255, 255, 0.86);
-    font-size: 0.96rem;
-    line-height: 1.65;
+.upcoming-concert-lead {
+    color: var(--color-text-main);
+    font-size: clamp(0.98rem, 1.3vw, 1.06rem);
+    font-weight: 500;
+    line-height: 1.6;
     margin-bottom: 0.85rem;
 }
 
-.upcoming-meta-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.85rem;
-    width: 100%;
-    margin: 1.25rem 0 1.6rem;
-    padding: 1.15rem;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: var(--radius-md);
+.upcoming-concert-desc {
+    color: var(--color-text-body);
+    font-size: 0.94rem;
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
 }
 
-.upcoming-meta-item {
+.upcoming-details-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem 1.75rem;
+    margin: 1.25rem 0 1.75rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.upcoming-detail-row {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
+    min-width: 0;
 }
 
-.upcoming-meta-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-sm);
-    background: rgba(245, 196, 0, 0.16);
-    color: #F7D354;
+.upcoming-detail-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid var(--color-border);
+    color: var(--color-primary);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    margin-top: 2px;
 }
 
-.upcoming-meta-text strong {
-    display: block;
+.upcoming-detail-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.upcoming-detail-label {
     font-size: 0.72rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 0.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.2;
 }
 
-.upcoming-meta-text span {
+.upcoming-detail-value {
     font-size: 0.92rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    line-height: 1.35;
-}
-
-.upcoming-hashtags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    margin-top: 1.35rem;
-}
-
-.upcoming-hashtag-chip {
-    font-size: 0.76rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.72);
-    background: rgba(255, 255, 255, 0.07);
-    padding: 0.25rem 0.65rem;
-    border-radius: var(--radius-full);
+    color: var(--color-text-main);
+    line-height: 1.4;
+}
+
+.upcoming-concert-actions {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 /* ==========================================================================
@@ -1884,12 +1842,13 @@ textarea.form-input {
     }
 
     .upcoming-poster-wrap {
-        max-width: 400px;
+        max-width: 380px;
         margin: 0 auto;
     }
 
-    .upcoming-meta-grid {
+    .upcoming-details-list {
         grid-template-columns: 1fr;
+        gap: 0.95rem;
     }
 
     .event-clean-img {

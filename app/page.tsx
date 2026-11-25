@@ -86,13 +86,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. Upcoming Flagship Concert Spotlight (Christmas in Africa — Feliz Navidad XIII) */}
+      {/* 2. Upcoming Concert Section */}
       <section className="upcoming-concert-section">
         <div className="container">
           <div className="upcoming-concert-card">
-            <div className="upcoming-concert-bg-glow"></div>
             <div className="upcoming-concert-grid">
-              {/* Official Portrait Flyer */}
               <div className="upcoming-poster-wrap">
                 <Image
                   src={upcomingConcert.posterImage.src}
@@ -103,15 +101,11 @@ export default function HomePage() {
                 />
               </div>
 
-              {/* Concert Details & Description */}
               <div className="upcoming-concert-body">
-                <div className="upcoming-badges-row">
-                  <span className="badge-pill gold">{upcomingConcert.badge}</span>
-                  <span className="badge-pill festive-red">{upcomingConcert.editionTag}</span>
-                </div>
+                <div className="badge-pill">{upcomingConcert.badge}</div>
                 <h2>{upcomingConcert.title}</h2>
-                <p className="upcoming-concert-tagline">
-                  {upcomingConcert.tagline}
+                <p className="upcoming-concert-lead">
+                  {upcomingConcert.subtitle}
                 </p>
                 <p className="upcoming-concert-desc">
                   {upcomingConcert.description}
@@ -120,46 +114,46 @@ export default function HomePage() {
                   {upcomingConcert.extraNote}
                 </p>
 
-                <div className="upcoming-meta-grid">
-                  <div className="upcoming-meta-item">
-                    <div className="upcoming-meta-icon">
-                      <Calendar size={18} />
+                <div className="upcoming-details-list">
+                  <div className="upcoming-detail-row">
+                    <div className="upcoming-detail-icon">
+                      <Calendar size={16} />
                     </div>
-                    <div className="upcoming-meta-text">
-                      <strong>Date</strong>
-                      <span>{upcomingConcert.date}</span>
-                    </div>
-                  </div>
-                  <div className="upcoming-meta-item">
-                    <div className="upcoming-meta-icon">
-                      <Clock size={18} />
-                    </div>
-                    <div className="upcoming-meta-text">
-                      <strong>Time</strong>
-                      <span>{upcomingConcert.time} (Doors Open Early)</span>
+                    <div className="upcoming-detail-text">
+                      <span className="upcoming-detail-label">Date</span>
+                      <span className="upcoming-detail-value">{upcomingConcert.date}</span>
                     </div>
                   </div>
-                  <div className="upcoming-meta-item">
-                    <div className="upcoming-meta-icon">
-                      <MapPin size={18} />
+                  <div className="upcoming-detail-row">
+                    <div className="upcoming-detail-icon">
+                      <Clock size={16} />
                     </div>
-                    <div className="upcoming-meta-text">
-                      <strong>Venue</strong>
-                      <span>{upcomingConcert.venue}</span>
+                    <div className="upcoming-detail-text">
+                      <span className="upcoming-detail-label">Time</span>
+                      <span className="upcoming-detail-value">{upcomingConcert.time}</span>
                     </div>
                   </div>
-                  <div className="upcoming-meta-item">
-                    <div className="upcoming-meta-icon">
-                      <Ticket size={18} />
+                  <div className="upcoming-detail-row">
+                    <div className="upcoming-detail-icon">
+                      <MapPin size={16} />
                     </div>
-                    <div className="upcoming-meta-text">
-                      <strong>Admission</strong>
-                      <span>{upcomingConcert.admission}</span>
+                    <div className="upcoming-detail-text">
+                      <span className="upcoming-detail-label">Venue</span>
+                      <span className="upcoming-detail-value">{upcomingConcert.venue}</span>
+                    </div>
+                  </div>
+                  <div className="upcoming-detail-row">
+                    <div className="upcoming-detail-icon">
+                      <Ticket size={16} />
+                    </div>
+                    <div className="upcoming-detail-text">
+                      <span className="upcoming-detail-label">Entry</span>
+                      <span className="upcoming-detail-value">{upcomingConcert.admission}</span>
                     </div>
                   </div>
                 </div>
 
-                <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap" }}>
+                <div className="upcoming-concert-actions">
                   <Link href={upcomingConcert.primaryCta.href} className="btn btn-primary">
                     {upcomingConcert.primaryCta.label} <ArrowRight size={15} />
                   </Link>
@@ -167,18 +161,10 @@ export default function HomePage() {
                     href={upcomingConcert.secondaryCta.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-outline-white"
+                    className="btn btn-outline-dark"
                   >
                     {upcomingConcert.secondaryCta.label}
                   </a>
-                </div>
-
-                <div className="upcoming-hashtags">
-                  {upcomingConcert.hashtags.map((tag) => (
-                    <span key={tag} className="upcoming-hashtag-chip">
-                      {tag}
-                    </span>
-                  ))}
                 </div>
               </div>
             </div>

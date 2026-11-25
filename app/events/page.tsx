@@ -7,14 +7,14 @@ import { events, upcomingConcert } from "@/data/events";
 export const metadata: Metadata = {
   title: "Concerts & Tours | Christmas in Africa (Feliz Navidad XIII) & Global Stages",
   description:
-    "Join VocalEssence Chorale Ghana for Christmas in Africa — Feliz Navidad XIII on Friday, December 4, 2026 at Victory Bible Church Int. (Awoshie Baah Yard) at 5:00 PM. Free Entry!",
+    "Join VocalEssence Chorale Ghana for Christmas in Africa (Feliz Navidad XIII) on Friday, 4th December 2026 at Victory Bible Church Int., Awoshie Baah Yard at 5:00 PM. Free Entry.",
   alternates: {
     canonical: "https://vecghana.com/events",
   },
   openGraph: {
-    title: "Christmas in Africa — Feliz Navidad XIII | VocalEssence Chorale Ghana",
+    title: "Christmas in Africa (Feliz Navidad XIII) | VocalEssence Chorale Ghana",
     description:
-      "Experience the warmth, rhythm, and harmony of the season at Christmas in Africa — Feliz Navidad XIII on Friday, 4th December 2026 at Victory Bible Church Int. (Awoshie Baah Yard). Free Entry!",
+      "Experience the warmth, rhythm, and harmony of the season at Christmas in Africa (Feliz Navidad XIII) on Friday, 4th December 2026 at Victory Bible Church Int., Awoshie Baah Yard. Free Entry.",
     url: "https://vecghana.com/events",
     images: ["https://vecghana.com/images/feliz-navidad-xiii-landscape.jpg"],
   },
@@ -39,16 +39,15 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Upcoming Flagship Concert Spotlight */}
+      {/* Upcoming Flagship Concert */}
       <section id="feliz-navidad-xiii" style={{ padding: "3.5rem 0 1rem" }}>
         <div className="container">
           <div style={{ marginBottom: "1.75rem" }}>
-            <div className="badge-pill">Next Live Production • Farmers&apos; Day Holiday</div>
-            <h2>Upcoming Flagship Concert</h2>
+            <div className="badge-pill">Next Live Production</div>
+            <h2>Upcoming Concert</h2>
           </div>
 
           <div className="upcoming-concert-card" style={{ marginBottom: "3.5rem" }}>
-            <div className="upcoming-concert-bg-glow"></div>
             <div className="upcoming-concert-grid">
               <div className="upcoming-poster-wrap">
                 <Image
@@ -62,60 +61,57 @@ export default function EventsPage() {
               </div>
 
               <div className="upcoming-concert-body">
-                <div className="upcoming-badges-row">
-                  <span className="badge-pill gold">{upcomingConcert.badge}</span>
-                  <span className="badge-pill festive-red">FELIZ NAVIDAD XIII</span>
-                </div>
+                <div className="badge-pill">{upcomingConcert.badge}</div>
                 <h2>{upcomingConcert.title}</h2>
                 {upcomingConcert.subtitle && (
-                  <p className="upcoming-concert-tagline">{upcomingConcert.subtitle}</p>
+                  <p className="upcoming-concert-lead">{upcomingConcert.subtitle}</p>
                 )}
                 <p className="upcoming-concert-desc">{upcomingConcert.description}</p>
                 {upcomingConcert.extraDescription && (
                   <p className="upcoming-concert-desc">{upcomingConcert.extraDescription}</p>
                 )}
 
-                <div className="upcoming-meta-grid">
-                  <div className="upcoming-meta-item">
-                    <div className="upcoming-meta-icon">
-                      <Calendar size={18} />
+                <div className="upcoming-details-list">
+                  <div className="upcoming-detail-row">
+                    <div className="upcoming-detail-icon">
+                      <Calendar size={16} />
                     </div>
-                    <div className="upcoming-meta-text">
-                      <strong>Date</strong>
-                      <span>{upcomingConcert.dateInfo}</span>
-                    </div>
-                  </div>
-                  <div className="upcoming-meta-item">
-                    <div className="upcoming-meta-icon">
-                      <Clock size={18} />
-                    </div>
-                    <div className="upcoming-meta-text">
-                      <strong>Time</strong>
-                      <span>{upcomingConcert.timeInfo}</span>
+                    <div className="upcoming-detail-text">
+                      <span className="upcoming-detail-label">Date</span>
+                      <span className="upcoming-detail-value">{upcomingConcert.dateInfo}</span>
                     </div>
                   </div>
-                  <div className="upcoming-meta-item">
-                    <div className="upcoming-meta-icon">
-                      <MapPin size={18} />
+                  <div className="upcoming-detail-row">
+                    <div className="upcoming-detail-icon">
+                      <Clock size={16} />
                     </div>
-                    <div className="upcoming-meta-text">
-                      <strong>Venue</strong>
-                      <span>{upcomingConcert.location}</span>
+                    <div className="upcoming-detail-text">
+                      <span className="upcoming-detail-label">Time</span>
+                      <span className="upcoming-detail-value">{upcomingConcert.timeInfo}</span>
                     </div>
                   </div>
-                  <div className="upcoming-meta-item">
-                    <div className="upcoming-meta-icon">
-                      <Ticket size={18} />
+                  <div className="upcoming-detail-row">
+                    <div className="upcoming-detail-icon">
+                      <MapPin size={16} />
                     </div>
-                    <div className="upcoming-meta-text">
-                      <strong>Admission</strong>
-                      <span>{upcomingConcert.admission}</span>
+                    <div className="upcoming-detail-text">
+                      <span className="upcoming-detail-label">Venue</span>
+                      <span className="upcoming-detail-value">{upcomingConcert.location}</span>
+                    </div>
+                  </div>
+                  <div className="upcoming-detail-row">
+                    <div className="upcoming-detail-icon">
+                      <Ticket size={16} />
+                    </div>
+                    <div className="upcoming-detail-text">
+                      <span className="upcoming-detail-label">Entry</span>
+                      <span className="upcoming-detail-value">{upcomingConcert.admission}</span>
                     </div>
                   </div>
                 </div>
 
                 {upcomingConcert.links && (
-                  <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap" }}>
+                  <div className="upcoming-concert-actions">
                     <a
                       href={upcomingConcert.links.primaryUrl}
                       target="_blank"
@@ -127,21 +123,11 @@ export default function EventsPage() {
                     {upcomingConcert.links.secondaryText && upcomingConcert.links.secondaryUrl && (
                       <Link
                         href={upcomingConcert.links.secondaryUrl}
-                        className="btn btn-outline-white"
+                        className="btn btn-outline-dark"
                       >
                         {upcomingConcert.links.secondaryText}
                       </Link>
                     )}
-                  </div>
-                )}
-
-                {upcomingConcert.hashtags && (
-                  <div className="upcoming-hashtags">
-                    {upcomingConcert.hashtags.map((tag) => (
-                      <span key={tag} className="upcoming-hashtag-chip">
-                        {tag}
-                      </span>
-                    ))}
                   </div>
                 )}
               </div>
@@ -158,12 +144,11 @@ export default function EventsPage() {
               overflow: "hidden",
               marginBottom: "4rem",
               border: "1px solid var(--color-border)",
-              boxShadow: "var(--shadow-card)",
             }}
           >
             <Image
               src={upcomingConcert.image}
-              alt="Christmas in Africa — Feliz Navidad XIII Official Landscape Banner"
+              alt="Christmas in Africa (Feliz Navidad XIII) Official Landscape Banner"
               fill
               sizes="(max-width: 1280px) 100vw, 1280px"
               style={{ objectFit: "cover" }}

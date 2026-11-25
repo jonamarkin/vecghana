@@ -12,7 +12,6 @@ export interface EventItem {
   location?: string;
   admission?: string;
   isUpcoming?: boolean;
-  hashtags?: string[];
   links?: {
     primaryText: string;
     primaryUrl: string;
@@ -23,33 +22,26 @@ export interface EventItem {
 
 export const upcomingConcert: EventItem = {
   id: "feliz-navidad-xiii-2026",
-  title: "Christmas in Africa — Feliz Navidad XIII",
-  subtitle: "The Greatest Story ever told, wrapped in the Vibrant Colours, Awe-Striking Rhythm and Rich Harmonies of Africa!",
-  badge: "Upcoming Concert • Farmers' Day Holiday",
-  dateInfo: "Friday, 4th December 2026 (Farmers' Day Holiday)",
-  timeInfo: "5:00 PM (Doors Open Early)",
-  location: "Victory Bible Church Int. (Awoshie Baah Yard)",
-  admission: "FREE ENTRY",
+  title: "Christmas in Africa (Feliz Navidad XIII)",
+  subtitle:
+    "The Greatest Story ever told, wrapped in the vibrant colours, awe-striking rhythm, and rich harmonies of Africa.",
+  badge: "Upcoming Concert • Feliz Navidad XIII",
+  dateInfo: "Friday, 4th December 2026 (Farmers' Day)",
+  timeInfo: "5:00 PM (Doors open early)",
+  location: "Victory Bible Church Int., Awoshie Baah Yard",
+  admission: "Free Entry",
   description:
-    "Experience the warmth, rhythm, and harmony of the season at Christmas in Africa — Feliz Navidad XIII, the annual pre-Christmas concert by VocalEssence Chorale Ghana. Join us at Victory Bible Church Int. (Awoshie Baah Yard) for an unforgettable evening of rich African choral music, classic Christmas carols, and joyful celebration.",
+    "Experience the warmth, rhythm, and harmony of the season at Christmas in Africa (Feliz Navidad XIII), the annual pre-Christmas concert by VocalEssence Chorale Ghana. Join us at Victory Bible Church Int., Awoshie Baah Yard, for an unforgettable evening of rich African choral music, classic Christmas carols, and joyful celebration.",
   extraDescription:
-    "This Farmers' Day holiday, take a break and join us for an unforgettable celebration of Christ, Culture and Music! Entry is completely FREE. Bring your family, friends, and loved ones—doors open early, so come grab a good seat!",
+    "This Farmers' Day holiday, take a break and join us for an unforgettable celebration of Christ, Culture, and Music. Entry is completely free, and doors open early, so bring your family, friends, and loved ones and come grab a good seat.",
   image: "/images/feliz-navidad-xiii-landscape.jpg",
   portraitImage: "/images/feliz-navidad-xiii-portrait.jpg",
   isUpcoming: true,
-  hashtags: [
-    "#ChristmasInAfrica",
-    "#ChristmasConcert2026",
-    "#FelizNavidadXIII",
-    "#VocalEssenceChorale",
-    "#VEC",
-    "#InHarmonyWeSing",
-  ],
   links: {
-    primaryText: "Get Venue Directions",
+    primaryText: "Get Directions",
     primaryUrl:
       "https://www.google.com/maps/search/?api=1&query=Victory+Bible+Church+International+Awoshie+Baah+Yard+Accra",
-    secondaryText: "Inquire / RSVP Details",
+    secondaryText: "Contact Us",
     secondaryUrl: "/contact",
   },
 };
