@@ -60,6 +60,23 @@ export interface HomeContent {
     buttonLabel: string;
     buttonHref: string;
   };
+  upcomingConcert: {
+    badge: string;
+    editionTag: string;
+    title: string;
+    tagline: string;
+    description: string;
+    extraNote: string;
+    date: string;
+    time: string;
+    venue: string;
+    admission: string;
+    posterImage: { src: string; alt: string };
+    bannerImage: { src: string; alt: string };
+    primaryCta: { label: string; href: string };
+    secondaryCta: { label: string; href: string };
+    hashtags: string[];
+  };
   internationalTour: {
     badge: string;
     title: string;
@@ -160,6 +177,46 @@ export const homeContent: HomeContent = {
     },
     buttonLabel: "About Us",
     buttonHref: "/about",
+  },
+
+  upcomingConcert: {
+    badge: "UPCOMING CONCERT • FARMERS' DAY HOLIDAY",
+    editionTag: "FELIZ NAVIDAD XIII",
+    title: "Christmas in Africa",
+    tagline:
+      "The Greatest Story ever told, wrapped in the Vibrant Colours, Awe-Striking Rhythm and Rich Harmonies of Africa!",
+    description:
+      "Experience the warmth, rhythm, and harmony of the season at Christmas in Africa — Feliz Navidad XIII, the annual pre-Christmas concert by VocalEssence Chorale Ghana. Join us at Victory Bible Church Int. (Awoshie Baah Yard) for an unforgettable evening of rich African choral music, classic Christmas carols, and joyful celebration.",
+    extraNote:
+      "This Farmers' Day holiday, take a break and join us for an unforgettable celebration of Christ, Culture and Music! Entry is completely FREE. Bring your family, friends, and loved ones—doors open early, so come grab a good seat!",
+    date: "Friday, 4th December 2026 (Farmers' Day Holiday)",
+    time: "5:00 PM",
+    venue: "Victory Bible Church Int., Awoshie Baah Yard",
+    admission: "FREE ENTRY",
+    posterImage: {
+      src: "/images/feliz-navidad-xiii-portrait.jpg",
+      alt: "Christmas in Africa — Feliz Navidad XIII official concert flyer by VocalEssence Chorale Ghana",
+    },
+    bannerImage: {
+      src: "/images/feliz-navidad-xiii-landscape.jpg",
+      alt: "Christmas in Africa — Feliz Navidad XIII banner by VocalEssence Chorale Ghana",
+    },
+    primaryCta: {
+      label: "Concert Details",
+      href: "/events#feliz-navidad-xiii",
+    },
+    secondaryCta: {
+      label: "Get Venue Directions",
+      href: "https://www.google.com/maps/search/?api=1&query=Victory+Bible+Church+International+Awoshie+Baah+Yard+Accra",
+    },
+    hashtags: [
+      "#ChristmasInAfrica",
+      "#ChristmasConcert2026",
+      "#FelizNavidadXIII",
+      "#VocalEssenceChorale",
+      "#VEC",
+      "#InHarmonyWeSing",
+    ],
   },
 
   internationalTour: {

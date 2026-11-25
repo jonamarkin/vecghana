@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Calendar, Clock, MapPin, Ticket } from "lucide-react";
 import { homeContent } from "@/data/homeContent";
 
 export default function HomePage() {
@@ -9,6 +9,7 @@ export default function HomePage() {
     whoWeAre,
     statsBar,
     essence,
+    upcomingConcert,
     internationalTour,
     programs,
     impactBanner,
@@ -85,7 +86,107 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. Who We Are Section */}
+      {/* 2. Upcoming Flagship Concert Spotlight (Christmas in Africa — Feliz Navidad XIII) */}
+      <section className="upcoming-concert-section">
+        <div className="container">
+          <div className="upcoming-concert-card">
+            <div className="upcoming-concert-bg-glow"></div>
+            <div className="upcoming-concert-grid">
+              {/* Official Portrait Flyer */}
+              <div className="upcoming-poster-wrap">
+                <Image
+                  src={upcomingConcert.posterImage.src}
+                  alt={upcomingConcert.posterImage.alt}
+                  fill
+                  sizes="(max-width: 860px) 90vw, 380px"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+
+              {/* Concert Details & Description */}
+              <div className="upcoming-concert-body">
+                <div className="upcoming-badges-row">
+                  <span className="badge-pill gold">{upcomingConcert.badge}</span>
+                  <span className="badge-pill festive-red">{upcomingConcert.editionTag}</span>
+                </div>
+                <h2>{upcomingConcert.title}</h2>
+                <p className="upcoming-concert-tagline">
+                  {upcomingConcert.tagline}
+                </p>
+                <p className="upcoming-concert-desc">
+                  {upcomingConcert.description}
+                </p>
+                <p className="upcoming-concert-desc">
+                  {upcomingConcert.extraNote}
+                </p>
+
+                <div className="upcoming-meta-grid">
+                  <div className="upcoming-meta-item">
+                    <div className="upcoming-meta-icon">
+                      <Calendar size={18} />
+                    </div>
+                    <div className="upcoming-meta-text">
+                      <strong>Date</strong>
+                      <span>{upcomingConcert.date}</span>
+                    </div>
+                  </div>
+                  <div className="upcoming-meta-item">
+                    <div className="upcoming-meta-icon">
+                      <Clock size={18} />
+                    </div>
+                    <div className="upcoming-meta-text">
+                      <strong>Time</strong>
+                      <span>{upcomingConcert.time} (Doors Open Early)</span>
+                    </div>
+                  </div>
+                  <div className="upcoming-meta-item">
+                    <div className="upcoming-meta-icon">
+                      <MapPin size={18} />
+                    </div>
+                    <div className="upcoming-meta-text">
+                      <strong>Venue</strong>
+                      <span>{upcomingConcert.venue}</span>
+                    </div>
+                  </div>
+                  <div className="upcoming-meta-item">
+                    <div className="upcoming-meta-icon">
+                      <Ticket size={18} />
+                    </div>
+                    <div className="upcoming-meta-text">
+                      <strong>Admission</strong>
+                      <span>{upcomingConcert.admission}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap" }}>
+                  <Link href={upcomingConcert.primaryCta.href} className="btn btn-primary">
+                    {upcomingConcert.primaryCta.label} <ArrowRight size={15} />
+                  </Link>
+                  <a
+                    href={upcomingConcert.secondaryCta.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline-white"
+                  >
+                    {upcomingConcert.secondaryCta.label}
+                  </a>
+                </div>
+
+                <div className="upcoming-hashtags">
+                  {upcomingConcert.hashtags.map((tag) => (
+                    <span key={tag} className="upcoming-hashtag-chip">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Who We Are Section */}
       <section className="who-we-are-section">
         <div className="container">
           <div className="who-grid">

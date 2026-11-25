@@ -54,7 +54,49 @@ export default function JsonLd() {
       "image": `https://vecghana.com${album.image}`,
       "url": album.appleMusicUrl,
       "albumReleaseType": album.tag === "EP" ? "EPRelease" : "AlbumRelease"
-    }))
+    })),
+    "event": {
+      "@type": "MusicEvent",
+      "name": "Christmas in Africa — Feliz Navidad XIII",
+      "description":
+        "Experience the warmth, rhythm, and harmony of the season at Christmas in Africa — Feliz Navidad XIII, the annual pre-Christmas concert by VocalEssence Chorale Ghana. Join us at Victory Bible Church Int. (Awoshie Baah Yard) for an unforgettable evening of rich African choral music, classic Christmas carols, and joyful celebration. Entry is completely FREE.",
+      "startDate": "2026-12-04T17:00:00+00:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "isAccessibleForFree": true,
+      "image": [
+        "https://vecghana.com/images/feliz-navidad-xiii-landscape.jpg",
+        "https://vecghana.com/images/feliz-navidad-xiii-portrait.jpg"
+      ],
+      "location": {
+        "@type": "Place",
+        "name": "Victory Bible Church Int. (Awoshie Baah Yard)",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Awoshie Baah Yard",
+          "addressLocality": "Accra",
+          "addressRegion": "Greater Accra",
+          "addressCountry": "GH"
+        }
+      },
+      "performer": {
+        "@type": "MusicGroup",
+        "name": "VocalEssence Chorale Ghana",
+        "url": "https://vecghana.com"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "VocalEssence Chorale Ghana",
+        "url": "https://vecghana.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "GHS",
+        "availability": "https://schema.org/InStock",
+        "url": "https://vecghana.com/events#feliz-navidad-xiii"
+      }
+    }
   };
 
   return (

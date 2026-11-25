@@ -1000,6 +1000,176 @@ img, video, iframe, svg {
 }
 
 /* ==========================================================================
+   Upcoming Concert Spotlight Section
+   ========================================================================== */
+.upcoming-concert-section {
+    padding: clamp(2rem, 4vw, 3.5rem) 0;
+}
+
+.upcoming-concert-card {
+    position: relative;
+    background: var(--color-dark);
+    color: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 24px 56px -12px rgba(14, 14, 16, 0.28);
+}
+
+.upcoming-concert-bg-glow {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(74, 21, 75, 0.55) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(255, 122, 0, 0.22) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.upcoming-concert-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: clamp(1.75rem, 4vw, 3.25rem);
+    padding: clamp(1.75rem, 4vw, 3rem);
+    align-items: center;
+}
+
+.upcoming-poster-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 819 / 1024;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #141416;
+}
+
+.upcoming-poster-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.upcoming-poster-wrap:hover img {
+    transform: scale(1.02);
+}
+
+.upcoming-concert-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.upcoming-badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.1rem;
+}
+
+.badge-pill.gold {
+    background: linear-gradient(135deg, #F5C400 0%, #FF8A00 100%);
+    color: #111113;
+    margin-bottom: 0;
+    font-weight: 800;
+}
+
+.badge-pill.festive-red {
+    background: #D9232E;
+    color: #FFFFFF;
+    margin-bottom: 0;
+    font-weight: 800;
+}
+
+.upcoming-concert-body h2 {
+    color: #FFFFFF;
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 0.65rem;
+}
+
+.upcoming-concert-tagline {
+    color: #F7D354;
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.upcoming-concert-desc {
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.96rem;
+    line-height: 1.65;
+    margin-bottom: 0.85rem;
+}
+
+.upcoming-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+    width: 100%;
+    margin: 1.25rem 0 1.6rem;
+    padding: 1.15rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-md);
+}
+
+.upcoming-meta-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.upcoming-meta-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background: rgba(245, 196, 0, 0.16);
+    color: #F7D354;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.upcoming-meta-text strong {
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.1rem;
+}
+
+.upcoming-meta-text span {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.35;
+}
+
+.upcoming-hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 1.35rem;
+}
+
+.upcoming-hashtag-chip {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.07);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
    Event Cards
    ========================================================================== */
 .event-clean-card {
@@ -1706,6 +1876,19 @@ textarea.form-input {
     }
 
     .event-clean-card {
+        grid-template-columns: 1fr;
+    }
+
+    .upcoming-concert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .upcoming-poster-wrap {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .upcoming-meta-grid {
         grid-template-columns: 1fr;
     }
 

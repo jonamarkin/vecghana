@@ -10,6 +10,16 @@ export interface GalleryPhoto {
 
 export const galleryPhotos: GalleryPhoto[] = [
   {
+    id: "feliz-navidad-xiii",
+    src: "/images/feliz-navidad-xiii-landscape.jpg",
+    alt: "Christmas in Africa - Feliz Navidad XIII Official Nativity Artwork",
+    caption:
+      "Christmas in Africa — Feliz Navidad XIII (Friday, Dec 4, 2026 at Victory Bible Church Int., Awoshie Baah Yard)",
+    category: "concerts",
+    title: "Christmas in Africa",
+    subtitle: "Feliz Navidad XIII • Dec 4, 2026",
+  },
+  {
     id: "choir-1",
     src: "/images/choir-1.jpg",
     alt: "Stage Ministration - Live on Stage at Feliz Navidad",

@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, ArrowRight } from "lucide-react";
-import { events } from "@/data/events";
+import { ChevronRight, ArrowRight, Calendar, Clock, MapPin, Ticket } from "lucide-react";
+import { events, upcomingConcert } from "@/data/events";
 
 export const metadata: Metadata = {
-  title: "Concerts & Tours | Africa Sings Benin & Feliz Navidad",
+  title: "Concerts & Tours | Christmas in Africa (Feliz Navidad XIII) & Global Stages",
   description:
-    "Explore past and upcoming concert productions by VocalEssence Chorale Ghana, including the 7th Africa Sings Festival in Benin, Feliz Navidad Christmas concerts, and Easter cantatas.",
+    "Join VocalEssence Chorale Ghana for Christmas in Africa — Feliz Navidad XIII on Friday, December 4, 2026 at Victory Bible Church Int. (Awoshie Baah Yard) at 5:00 PM. Free Entry!",
   alternates: {
     canonical: "https://vecghana.com/events",
   },
   openGraph: {
-    title: "Concerts & Tours | VocalEssence Chorale Ghana",
+    title: "Christmas in Africa — Feliz Navidad XIII | VocalEssence Chorale Ghana",
     description:
-      "Witness our vibrant performance history: Africa Sings Benin 2023, Feliz Navidad series, and signature concert productions.",
+      "Experience the warmth, rhythm, and harmony of the season at Christmas in Africa — Feliz Navidad XIII on Friday, 4th December 2026 at Victory Bible Church Int. (Awoshie Baah Yard). Free Entry!",
     url: "https://vecghana.com/events",
-    images: ["https://vecghana.com/images/choir-8.jpg"],
+    images: ["https://vecghana.com/images/feliz-navidad-xiii-landscape.jpg"],
   },
 };
 
@@ -34,14 +34,148 @@ export default function EventsPage() {
           <div className="badge-pill">Concerts & Tours</div>
           <h1>Concerts & Global Stages</h1>
           <p>
-            From our annual flagship Feliz Navidad concert series to representing Ghana on continental stages across Africa, witness our vibrant performance history.
+            From our annual flagship Feliz Navidad concert series to representing Ghana on continental stages across Africa, witness our vibrant performance history and upcoming productions.
           </p>
         </div>
       </section>
 
-      {/* Featured Tour Spotlight */}
-      <section style={{ padding: "4rem 0" }}>
+      {/* Upcoming Flagship Concert Spotlight */}
+      <section id="feliz-navidad-xiii" style={{ padding: "3.5rem 0 1rem" }}>
         <div className="container">
+          <div style={{ marginBottom: "1.75rem" }}>
+            <div className="badge-pill">Next Live Production • Farmers&apos; Day Holiday</div>
+            <h2>Upcoming Flagship Concert</h2>
+          </div>
+
+          <div className="upcoming-concert-card" style={{ marginBottom: "3.5rem" }}>
+            <div className="upcoming-concert-bg-glow"></div>
+            <div className="upcoming-concert-grid">
+              <div className="upcoming-poster-wrap">
+                <Image
+                  src={upcomingConcert.portraitImage || upcomingConcert.image}
+                  alt={upcomingConcert.title}
+                  fill
+                  priority
+                  sizes="(max-width: 860px) 90vw, 380px"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+
+              <div className="upcoming-concert-body">
+                <div className="upcoming-badges-row">
+                  <span className="badge-pill gold">{upcomingConcert.badge}</span>
+                  <span className="badge-pill festive-red">FELIZ NAVIDAD XIII</span>
+                </div>
+                <h2>{upcomingConcert.title}</h2>
+                {upcomingConcert.subtitle && (
+                  <p className="upcoming-concert-tagline">{upcomingConcert.subtitle}</p>
+                )}
+                <p className="upcoming-concert-desc">{upcomingConcert.description}</p>
+                {upcomingConcert.extraDescription && (
+                  <p className="upcoming-concert-desc">{upcomingConcert.extraDescription}</p>
+                )}
+
+                <div className="upcoming-meta-grid">
+                  <div className="upcoming-meta-item">
+                    <div className="upcoming-meta-icon">
+                      <Calendar size={18} />
+                    </div>
+                    <div className="upcoming-meta-text">
+                      <strong>Date</strong>
+                      <span>{upcomingConcert.dateInfo}</span>
+                    </div>
+                  </div>
+                  <div className="upcoming-meta-item">
+                    <div className="upcoming-meta-icon">
+                      <Clock size={18} />
+                    </div>
+                    <div className="upcoming-meta-text">
+                      <strong>Time</strong>
+                      <span>{upcomingConcert.timeInfo}</span>
+                    </div>
+                  </div>
+                  <div className="upcoming-meta-item">
+                    <div className="upcoming-meta-icon">
+                      <MapPin size={18} />
+                    </div>
+                    <div className="upcoming-meta-text">
+                      <strong>Venue</strong>
+                      <span>{upcomingConcert.location}</span>
+                    </div>
+                  </div>
+                  <div className="upcoming-meta-item">
+                    <div className="upcoming-meta-icon">
+                      <Ticket size={18} />
+                    </div>
+                    <div className="upcoming-meta-text">
+                      <strong>Admission</strong>
+                      <span>{upcomingConcert.admission}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {upcomingConcert.links && (
+                  <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap" }}>
+                    <a
+                      href={upcomingConcert.links.primaryUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary"
+                    >
+                      {upcomingConcert.links.primaryText} <ArrowRight size={15} />
+                    </a>
+                    {upcomingConcert.links.secondaryText && upcomingConcert.links.secondaryUrl && (
+                      <Link
+                        href={upcomingConcert.links.secondaryUrl}
+                        className="btn btn-outline-white"
+                      >
+                        {upcomingConcert.links.secondaryText}
+                      </Link>
+                    )}
+                  </div>
+                )}
+
+                {upcomingConcert.hashtags && (
+                  <div className="upcoming-hashtags">
+                    {upcomingConcert.hashtags.map((tag) => (
+                      <span key={tag} className="upcoming-hashtag-chip">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Wide Landscape Banner Preview */}
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              aspectRatio: "16 / 9",
+              borderRadius: "var(--radius-lg)",
+              overflow: "hidden",
+              marginBottom: "4rem",
+              border: "1px solid var(--color-border)",
+              boxShadow: "var(--shadow-card)",
+            }}
+          >
+            <Image
+              src={upcomingConcert.image}
+              alt="Christmas in Africa — Feliz Navidad XIII Official Landscape Banner"
+              fill
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+
+          {/* Continental Tour Spotlight */}
+          <div style={{ marginBottom: "1.75rem" }}>
+            <div className="badge-pill">International Representation</div>
+            <h2>Continental Tour Highlight</h2>
+          </div>
+
           <div className="impact-banner-card" style={{ marginBottom: "4rem" }}>
             <div className="impact-banner-bg">
               <Image
@@ -83,7 +217,7 @@ export default function EventsPage() {
           </div>
 
           <div>
-            {events.slice(1).map((event) => (
+            {events.slice(2).map((event) => (
               <div key={event.id} className="event-clean-card">
                 <div className="event-clean-img">
                   <Image

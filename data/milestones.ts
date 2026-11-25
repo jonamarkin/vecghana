@@ -35,4 +35,9 @@ export const milestones: Milestone[] = [
     title: "Ayeyi Ndwom & Global Streaming Expansion",
     description: "Released Ayeyi Ndwom and expanded worldwide streaming presence across Spotify, Apple Music, YouTube, and all digital platforms.",
   },
+  {
+    year: "Dec 2026",
+    title: "Feliz Navidad XIII: Christmas in Africa",
+    description: "Our 13th annual flagship pre-Christmas production celebrating Christ, Culture, and Music at Victory Bible Church Int., Awoshie Baah Yard.",
+  },
 ];

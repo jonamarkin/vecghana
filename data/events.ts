@@ -1,11 +1,18 @@
 export interface EventItem {
   id: string;
   title: string;
+  subtitle?: string;
   badge: string;
   description: string;
+  extraDescription?: string;
   image: string;
+  portraitImage?: string;
   dateInfo?: string;
+  timeInfo?: string;
   location?: string;
+  admission?: string;
+  isUpcoming?: boolean;
+  hashtags?: string[];
   links?: {
     primaryText: string;
     primaryUrl: string;
@@ -14,7 +21,41 @@ export interface EventItem {
   };
 }
 
+export const upcomingConcert: EventItem = {
+  id: "feliz-navidad-xiii-2026",
+  title: "Christmas in Africa — Feliz Navidad XIII",
+  subtitle: "The Greatest Story ever told, wrapped in the Vibrant Colours, Awe-Striking Rhythm and Rich Harmonies of Africa!",
+  badge: "Upcoming Concert • Farmers' Day Holiday",
+  dateInfo: "Friday, 4th December 2026 (Farmers' Day Holiday)",
+  timeInfo: "5:00 PM (Doors Open Early)",
+  location: "Victory Bible Church Int. (Awoshie Baah Yard)",
+  admission: "FREE ENTRY",
+  description:
+    "Experience the warmth, rhythm, and harmony of the season at Christmas in Africa — Feliz Navidad XIII, the annual pre-Christmas concert by VocalEssence Chorale Ghana. Join us at Victory Bible Church Int. (Awoshie Baah Yard) for an unforgettable evening of rich African choral music, classic Christmas carols, and joyful celebration.",
+  extraDescription:
+    "This Farmers' Day holiday, take a break and join us for an unforgettable celebration of Christ, Culture and Music! Entry is completely FREE. Bring your family, friends, and loved ones—doors open early, so come grab a good seat!",
+  image: "/images/feliz-navidad-xiii-landscape.jpg",
+  portraitImage: "/images/feliz-navidad-xiii-portrait.jpg",
+  isUpcoming: true,
+  hashtags: [
+    "#ChristmasInAfrica",
+    "#ChristmasConcert2026",
+    "#FelizNavidadXIII",
+    "#VocalEssenceChorale",
+    "#VEC",
+    "#InHarmonyWeSing",
+  ],
+  links: {
+    primaryText: "Get Venue Directions",
+    primaryUrl:
+      "https://www.google.com/maps/search/?api=1&query=Victory+Bible+Church+International+Awoshie+Baah+Yard+Accra",
+    secondaryText: "Inquire / RSVP Details",
+    secondaryUrl: "/contact",
+  },
+};
+
 export const events: EventItem[] = [
+  upcomingConcert,
   {
     id: "africa-sings-benin-2023",
     title: "7th Edition of Africa Sings Festival | Cotonou, Benin",
@@ -34,7 +75,7 @@ export const events: EventItem[] = [
     id: "feliz-navidad-series",
     title: "Feliz Navidad Christmas Concert Series",
     badge: "Annual Flagship Event • Every December",
-    description: "Feliz Navidad is VocalEssence Chorale's premier annual Christmas experience (spanning acclaimed editions including Feliz Navidad 9, Feliz Navidad XI, and Feliz Navidad 12th Noel). It brings families and music enthusiasts together for an evening of festive grandeur, classical carols, Ghanaian highlife arrangements, and nativity drama.",
+    description: "Feliz Navidad is VocalEssence Chorale's premier annual Christmas experience (spanning acclaimed editions including Feliz Navidad 9, Feliz Navidad XI, Feliz Navidad 12th Noel, and Feliz Navidad XIII: Christmas in Africa). It brings families and music enthusiasts together for an evening of festive grandeur, classical carols, Ghanaian highlife arrangements, and nativity drama.",
     image: "/images/choir-1.jpg",
     links: {
       primaryText: "Watch Highlights",
