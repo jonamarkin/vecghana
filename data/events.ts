@@ -1,3 +1,28 @@
+export interface ConcertDonation {
+  badge: string;
+  beneficiary: string;
+  location: string;
+  summary: string;
+  network: string;
+  number: string;
+  numberDisplay: string;
+  ussdName: string;
+  appName: string;
+}
+
+export const concertDonation: ConcertDonation = {
+  badge: "Christmas Outreach",
+  beneficiary: "Methodist Rafiki Satellite Village",
+  location: "Gyaahadze, Winneba",
+  summary:
+    "As part of this year's Christmas in Africa concert, VocalEssence Chorale Ghana will be making a donation to the Methodist Rafiki Satellite Village in Winneba. You can partner with us and support the children by sending a monetary donation via MTN MoMo.",
+  network: "MTN Mobile Money (MoMo)",
+  number: "0598552988",
+  numberDisplay: "059 855 2988",
+  ussdName: "VOCALESSENCE CHORALE",
+  appName: "DERECK BONNEY",
+};
+
 export interface EventItem {
   id: string;
   title: string;

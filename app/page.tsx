@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Play, Calendar, Clock, MapPin, Ticket } from "lucide-react";
 import { homeContent } from "@/data/homeContent";
+import { concertDonation } from "@/data/events";
 
 export default function HomePage() {
   const {
@@ -165,6 +166,36 @@ export default function HomePage() {
                   >
                     {upcomingConcert.secondaryCta.label}
                   </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Concert Outreach & Donation Strip */}
+            <div className="concert-donation-strip">
+              <div className="concert-donation-copy">
+                <div className="badge-pill" style={{ marginBottom: "0.75rem" }}>
+                  {concertDonation.badge}
+                </div>
+                <h3>
+                  Support the {concertDonation.beneficiary}, {concertDonation.location}
+                </h3>
+                <p>{concertDonation.summary}</p>
+              </div>
+
+              <div className="concert-donation-box">
+                <div className="concert-donation-row">
+                  <span className="concert-donation-label">MTN MoMo Number</span>
+                  <span className="concert-donation-value concert-donation-number">
+                    {concertDonation.numberDisplay}
+                  </span>
+                </div>
+                <div className="concert-donation-row">
+                  <span className="concert-donation-label">Name via *170#</span>
+                  <span className="concert-donation-value">{concertDonation.ussdName}</span>
+                </div>
+                <div className="concert-donation-row">
+                  <span className="concert-donation-label">Name via MoMo App</span>
+                  <span className="concert-donation-value">{concertDonation.appName}</span>
                 </div>
               </div>
             </div>

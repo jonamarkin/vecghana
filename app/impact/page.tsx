@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ChevronRight, Phone } from "lucide-react";
 import { impactContent } from "@/data/impactContent";
 import { siteConfig } from "@/data/siteConfig";
+import { concertDonation } from "@/data/events";
 
 export const metadata: Metadata = {
   title: "Our Impact | Saving Hearts Project & Philanthropy",
@@ -43,6 +44,38 @@ export default function ImpactPage() {
       {/* Saving Hearts Project Feature */}
       <section style={{ padding: "4rem 0" }}>
         <div className="container">
+          {/* Current Christmas Outreach Donation Card */}
+          <div className="upcoming-concert-card" style={{ marginBottom: "3rem" }}>
+            <div className="concert-donation-strip" style={{ borderTop: "none" }}>
+              <div className="concert-donation-copy">
+                <div className="badge-pill" style={{ marginBottom: "0.75rem" }}>
+                  Feliz Navidad XIII • {concertDonation.badge}
+                </div>
+                <h3>
+                  Support the {concertDonation.beneficiary}, {concertDonation.location}
+                </h3>
+                <p>{concertDonation.summary}</p>
+              </div>
+
+              <div className="concert-donation-box">
+                <div className="concert-donation-row">
+                  <span className="concert-donation-label">MTN MoMo Number</span>
+                  <span className="concert-donation-value concert-donation-number">
+                    {concertDonation.numberDisplay}
+                  </span>
+                </div>
+                <div className="concert-donation-row">
+                  <span className="concert-donation-label">Name via *170#</span>
+                  <span className="concert-donation-value">{concertDonation.ussdName}</span>
+                </div>
+                <div className="concert-donation-row">
+                  <span className="concert-donation-label">Name via MoMo App</span>
+                  <span className="concert-donation-value">{concertDonation.appName}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="impact-banner-card" style={{ marginBottom: "4rem" }}>
             <div className="impact-banner-bg">
               <Image

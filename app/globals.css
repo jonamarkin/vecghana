@@ -1127,6 +1127,76 @@ img, video, iframe, svg {
     align-items: center;
 }
 
+/* Concert Outreach & Donation Strip */
+.concert-donation-strip {
+    border-top: 1px solid var(--color-border);
+    background: #FFFFFF;
+    padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.5rem, 3.5vw, 2.75rem);
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: clamp(1.5rem, 3.5vw, 2.75rem);
+    align-items: center;
+}
+
+.concert-donation-copy h3 {
+    font-size: clamp(1.2rem, 2vw, 1.45rem);
+    margin-bottom: 0.45rem;
+    color: var(--color-text-main);
+}
+
+.concert-donation-copy p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--color-text-body);
+    margin: 0;
+}
+
+.concert-donation-box {
+    background: var(--color-surface-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.15rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.concert-donation-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.concert-donation-row:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.concert-donation-label {
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+.concert-donation-value {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    text-align: right;
+}
+
+.concert-donation-number {
+    font-size: 1.05rem;
+    color: var(--color-primary);
+    letter-spacing: 0.02em;
+}
+
 /* ==========================================================================
    Event Cards
    ========================================================================== */
@@ -1849,6 +1919,11 @@ textarea.form-input {
     .upcoming-details-list {
         grid-template-columns: 1fr;
         gap: 0.95rem;
+    }
+
+    .concert-donation-strip {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
 
     .event-clean-img {
