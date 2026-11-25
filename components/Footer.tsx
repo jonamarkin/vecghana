@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -15,6 +16,40 @@ import {
 import { siteConfig } from "@/data/siteConfig";
 
 export default function Footer() {
+  const [subEmail, setSubEmail] = useState("");
+  const [subStatus, setSubStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!subEmail.trim()) return;
+    setSubStatus("sending");
+
+    try {
+      const response = await fetch(
+        `https://formsubmit.co/ajax/${siteConfig.contact.email}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            _subject: "New Newsletter Subscriber - VocalEssence Chorale Ghana",
+            _replyto: subEmail.trim(),
+            _captcha: "false",
+            Email: subEmail.trim(),
+          }),
+        }
+      );
+
+      if (!response.ok) throw new Error("Failed");
+      setSubEmail("");
+      setSubStatus("sent");
+    } catch {
+      setSubStatus("error");
+    }
+  };
+
   return (
     <footer className="site-footer">
       <div className="container footer-main-grid">
@@ -122,26 +157,41 @@ export default function Footer() {
           <p>
             Subscribe to get updates on our latest music, events and more.
           </p>
-          <form
-            className="newsletter-input-group"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert(`Thank you for subscribing to ${siteConfig.name}!`);
-            }}
-          >
-            <input type="email" placeholder="Enter your email" required />
-            <button type="submit" className="btn btn-primary" style={{ padding: "0.65rem 1.15rem" }}>
-              Subscribe
-            </button>
-          </form>
+              <form className="newsletter-input-group" onSubmit={handleSubscribe}>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={subEmail}
+                  onChange={(e) => setSubEmail(e.target.value)}
+                  required
+                />
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  style={{ padding: "0.65rem 1.15rem" }}
+                  disabled={subStatus === "sending"}
+                >
+                  {subStatus === "sending" ? "Sending..." : "Subscribe"}
+                </button>
+              </form>
+              {subStatus === "sent" && (
+                <p style={{ color: "#D4F5DD", fontSize: "0.82rem", marginTop: "0.6rem" }}>
+                  Thank you for subscribing to {siteConfig.name}.
+                </p>
+              )}
+              {subStatus === "error" && (
+                <p style={{ color: "#FCA5A5", fontSize: "0.82rem", marginTop: "0.6rem" }}>
+                  Could not subscribe right now. Please try again later.
+                </p>
+              )}
+            </div>
         </div>
-      </div>
 
-      <div className="container">
-        <div className="footer-copyright-bar">
-          <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.</p>
+        <div className="container">
+          <div className="footer-copyright-bar">
+            <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.</p>
+          </div>
         </div>
-      </div>
     </footer>
   );
 }
