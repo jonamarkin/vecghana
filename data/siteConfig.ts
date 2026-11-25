@@ -51,8 +51,8 @@ export const siteConfig: SiteConfig = {
   contact: {
     phone: "+233200079728",
     phoneDisplay: "+233 20 007 9728",
-    email: "info@vecghana.com",
-    bookingEmail: "bookings@vecghana.com",
+    email: "vocalessencechorale@gmail.com",
+    bookingEmail: "vocalessencechorale@gmail.com",
     address: "Dansoman, Accra, Greater Accra Region, Ghana",
   },
   socialLinks: {
